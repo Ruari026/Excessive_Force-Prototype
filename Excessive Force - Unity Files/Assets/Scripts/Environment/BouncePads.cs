@@ -11,6 +11,8 @@ public class BouncePads : MonoBehaviour
         if (collision.gameObject.GetComponent<Rigidbody>())
         {
             Rigidbody otherRB = collision.gameObject.GetComponent<Rigidbody>();
+
+            otherRB.velocity = Vector3.zero;
             otherRB.AddForce(this.transform.up * bounceForce);
         }
     }

@@ -47,6 +47,11 @@ public class PlayerController : MonoBehaviour
     {
         transform.rotation = new Quaternion(0, cameraMount.transform.rotation.y, 0, cameraMount.transform.rotation.w);
         this.currentState.UpdateState(this);
+
+        if (this.transform.position.y < -10)
+        {
+            this.transform.position = Vector3.zero;
+        }
     }
 
     void FixedUpdate()
@@ -106,13 +111,12 @@ public class PlayerController : MonoBehaviour
         }
 
         Vector3 velocity = transform.InverseTransformDirection(theRB.velocity);
-        Vector3 force = new Vector3
-        {
-            x = (((input.x * speed) - velocity.x) * acceleration),
-            y = 0,
-            z = (((input.y * speed) - velocity.z) * acceleration)
-        };
+
+        Vector3 force = Vector3.zero;
+        force.x = (((input.x * speed) - velocity.x) * acceleration);
+        force.z = (((input.y * speed) - velocity.z) * acceleration);
         force = transform.TransformDirection(force);
+
         theRB.AddForce(force);
     }
 
@@ -120,7 +124,8 @@ public class PlayerController : MonoBehaviour
     {
         RaycastHit hit;
         Physics.Raycast(transform.position + (Vector3.up * 0.5f), Vector3.down, out hit);
-        if (Vector3.Distance(transform.position, hit.point) < 0.5f)
+        
+        if (Vector3.Distance(transform.position, hit.point) < 0.35f)
         {
             return true;
         }
