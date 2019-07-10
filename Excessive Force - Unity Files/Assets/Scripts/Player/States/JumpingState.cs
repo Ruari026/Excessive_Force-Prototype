@@ -18,18 +18,25 @@ public class JumpingState : PlayerState
 
     override public void UpdateState(PlayerController thePlayer)
     {
-        if (jumpDuration > jumpDurationThreshold)
-        {
-            thePlayer.ChangeState(thePlayer.playerFalling);
-        }
-
         if (Input.GetKey(KeyCode.Space))
         {
             jumpDuration += Time.deltaTime;
         }
-        else
+        if (Input.GetKeyUp(KeyCode.Space))
         {
-            thePlayer.ChangeState(thePlayer.playerFalling);
+            jumpDuration = jumpDurationThreshold;
+        }
+
+        if (thePlayer.IsGrounded() && jumpDuration >= jumpDurationThreshold)
+        {
+            if (Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0)
+            {
+                thePlayer.ChangeState(thePlayer.playerMoving);
+            }
+            else
+            {
+                thePlayer.ChangeState(thePlayer.playerIdle);
+            }
         }
     }
 
@@ -43,25 +50,6 @@ public class JumpingState : PlayerState
         if (Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0)
         {
             thePlayer.MovePlayer(thePlayer.airAccel);
-        }
-    }
-
-    public override void CheckCollisionState(PlayerController thePlayer, Collision collision)
-    {
-        // State Changes
-        for (int i = 0; i < collision.contacts.Length; i++)
-        {
-            if (Vector3.Angle(collision.GetContact(i).normal, Vector3.up) < 45)
-            {
-                if (Input.GetAxis("Vertical") != 0 || Input.GetAxis("Horizontal") != 0)
-                {
-                    thePlayer.ChangeState(thePlayer.playerMoving);
-                }
-                else
-                {
-                    thePlayer.ChangeState(thePlayer.playerIdle);
-                }
-            }
         }
     }
 }

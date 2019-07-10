@@ -13,7 +13,17 @@ public class FallingState : PlayerState
 
     override public void UpdateState(PlayerController thePlayer)
     {
-       
+        if (thePlayer.IsGrounded())
+        {
+            if (Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0)
+            {
+                thePlayer.ChangeState(thePlayer.playerMoving);
+            }
+            else
+            {
+                thePlayer.ChangeState(thePlayer.playerIdle);
+            }
+        }
     }
 
     public override void FixedUpdateState(PlayerController thePlayer)
@@ -21,25 +31,6 @@ public class FallingState : PlayerState
         if (Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0)
         {
             thePlayer.MovePlayer(thePlayer.airAccel);
-        }
-    }
-
-    public override void CheckCollisionState(PlayerController thePlayer, Collision collision)
-    {
-        // State Changes
-        for (int i = 0; i < collision.contacts.Length; i++)
-        {
-            if (Vector3.Angle(collision.GetContact(i).normal, Vector3.up) < 45)
-            {
-                if (Input.GetAxis("Vertical") != 0 || Input.GetAxis("Horizontal") != 0)
-                {
-                    thePlayer.ChangeState(thePlayer.playerMoving);
-                }
-                else
-                {
-                    thePlayer.ChangeState(thePlayer.playerIdle);
-                }
-            }
         }
     }
 }

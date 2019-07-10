@@ -26,6 +26,17 @@ public class WalkingState : PlayerState
         {
             thePlayer.ChangeState(thePlayer.playerFalling);
         }
+
+        Vector3 movementDirection = thePlayer.transform.forward;
+        if (Input.GetAxis("Vertical") > 0)
+        {
+            movementDirection += thePlayer.transform.right * Input.GetAxis("Horizontal");
+        }
+        else if (Input.GetAxis("Vertical") < 0)
+        {
+            movementDirection -= thePlayer.transform.right * Input.GetAxis("Horizontal");
+        }
+        thePlayer.modelHips.transform.rotation = Quaternion.Lerp(thePlayer.modelHips.transform.rotation, Quaternion.LookRotation(movementDirection, Vector3.up), Time.deltaTime * thePlayer.hipRotationSpeed);
     }
 
     public override void FixedUpdateState(PlayerController thePlayer)

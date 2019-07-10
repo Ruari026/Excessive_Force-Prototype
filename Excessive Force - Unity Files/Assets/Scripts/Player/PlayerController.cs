@@ -21,6 +21,20 @@ public class PlayerController : MonoBehaviour
     public float jumpSpeed = 10;
     public float airAccel = 2.5f;
 
+    // Detecting If Player Is Grounded
+    [Header("Player Grounded Info")]
+    public float width;
+    public float groundedHeight;
+
+    // Controlling Model Hips And Spine Rotations
+    public GameObject modelHips;
+    public GameObject modelSpine;
+    public float hipRotationSpeed = 90;
+
+    //Player Weapon Info
+    [Header("Player Weapon")]
+    public WeaponController playerWeapon;
+
     // Other required information for each state
     public Animator animController;
     public GameObject cameraMount;
@@ -46,12 +60,19 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         transform.rotation = new Quaternion(0, cameraMount.transform.rotation.y, 0, cameraMount.transform.rotation.w);
+
+        modelSpine.transform.rotation = new Quaternion(0, cameraMount.transform.rotation.y, 0, cameraMount.transform.rotation.w);
+        modelSpine.transform.localEulerAngles = new Vector3(cameraMount.transform.eulerAngles.x, modelSpine.transform.localEulerAngles.y, modelSpine.transform.localEulerAngles.z);
+        
         this.currentState.UpdateState(this);
 
+        // Respawn If Player Falls Out Of Bounds
         if (this.transform.position.y < -10)
         {
             this.transform.position = Vector3.zero;
         }
+
+        IsGrounded();
     }
 
     void FixedUpdate()
@@ -59,7 +80,7 @@ public class PlayerController : MonoBehaviour
         this.currentState.FixedUpdateState(this);
     }
     
-    private void OnCollisionEnter(Collision collision)
+    private void OnCollisionStay(Collision collision)
     {
         currentState.CheckCollisionState(this, collision);
     }
@@ -122,16 +143,55 @@ public class PlayerController : MonoBehaviour
 
     public bool IsGrounded()
     {
-        RaycastHit hit;
-        Physics.Raycast(transform.position + (Vector3.up * 0.5f), Vector3.down, out hit);
-        
-        if (Vector3.Distance(transform.position, hit.point) < 0.35f)
+        for (int i = 0; i < 5; i++)
         {
-            return true;
+            Ray ray = new Ray();
+
+            Vector3 newOrigin = this.transform.position + (Vector3.up * 0.5f);
+            switch (i)
+            {
+                case (1):
+                    {
+                        newOrigin.x += width / 2;
+                        newOrigin.z += width / 2;
+                    }
+                    break;
+
+                case (2):
+                    {
+                        newOrigin.x -= width / 2;
+                        newOrigin.z += width / 2;
+                    }
+                    break;
+
+                case (3):
+                    {
+                        newOrigin.x -= width / 2;
+                        newOrigin.z -= width / 2;
+                    }
+                    break;
+
+                case (4):
+                    {
+                        newOrigin.x += width / 2;
+                        newOrigin.z -= width / 2;
+                    }
+                    break;
+            }
+            ray.origin = newOrigin;
+            ray.direction = Vector3.down;
+
+            if (Physics.Raycast(ray, out RaycastHit hit))
+            {
+                Debug.DrawLine(ray.origin, hit.point);
+                if (Vector3.Distance(ray.origin, hit.point) <= groundedHeight)
+                {
+                    return true;
+                }
+            }
+            
         }
-        else
-        {
-            return false;
-        }
+
+        return false;
     }
 }
