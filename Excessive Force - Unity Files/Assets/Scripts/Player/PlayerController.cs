@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
     public WalkingState playerMoving;
     public JumpingState playerJumping;
     public FallingState playerFalling;
+    public DodgingState playerDodging;
 
     // Player Movement Information
     [Header("Ground Movement")]
@@ -39,7 +40,10 @@ public class PlayerController : MonoBehaviour
     public Animator animController;
     public GameObject cameraMount;
     public Rigidbody theRB;
-    
+
+    //Temp Variables
+    public bool followCameraRotation = true;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -47,7 +51,8 @@ public class PlayerController : MonoBehaviour
         playerMoving = new WalkingState();
         playerJumping = new JumpingState();
         playerFalling = new FallingState();
-
+        playerDodging = new DodgingState();
+        
         this.currentState = playerIdle;
     }
 
@@ -59,11 +64,15 @@ public class PlayerController : MonoBehaviour
     */
     void Update()
     {
-        transform.rotation = new Quaternion(0, cameraMount.transform.rotation.y, 0, cameraMount.transform.rotation.w);
+        if (followCameraRotation)
+        {
+            transform.rotation = new Quaternion(0, cameraMount.transform.rotation.y, 0, cameraMount.transform.rotation.w);
 
-        modelSpine.transform.rotation = new Quaternion(0, cameraMount.transform.rotation.y, 0, cameraMount.transform.rotation.w);
-        modelSpine.transform.localEulerAngles = new Vector3(cameraMount.transform.eulerAngles.x, modelSpine.transform.localEulerAngles.y, modelSpine.transform.localEulerAngles.z);
-        
+            modelSpine.transform.rotation = new Quaternion(0, cameraMount.transform.rotation.y, 0, cameraMount.transform.rotation.w);
+            modelSpine.transform.localEulerAngles = new Vector3(cameraMount.transform.eulerAngles.x, modelSpine.transform.localEulerAngles.y, modelSpine.transform.localEulerAngles.z);
+
+        }
+
         this.currentState.UpdateState(this);
 
         // Respawn If Player Falls Out Of Bounds
@@ -136,6 +145,22 @@ public class PlayerController : MonoBehaviour
         Vector3 force = Vector3.zero;
         force.x = (((input.x * speed) - velocity.x) * acceleration);
         force.z = (((input.y * speed) - velocity.z) * acceleration);
+        force = transform.TransformDirection(force);
+
+        theRB.AddForce(force);
+    }
+    public void MovePlayer(float acceleration, Vector3 direction)
+    {
+        if (direction.magnitude > 1)
+        {
+            direction.Normalize();
+        }
+
+        Vector3 velocity = transform.InverseTransformDirection(theRB.velocity);
+
+        Vector3 force = Vector3.zero;
+        force.x = (((direction.x * speed) - velocity.x) * acceleration);
+        force.z = (((direction.y * speed) - velocity.z) * acceleration);
         force = transform.TransformDirection(force);
 
         theRB.AddForce(force);

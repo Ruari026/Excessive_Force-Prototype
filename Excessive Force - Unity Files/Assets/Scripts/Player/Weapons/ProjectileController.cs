@@ -32,15 +32,13 @@ public class ProjectileController : MonoBehaviour
 
                 case (ProjectileType.PIERCING):
                     {
-                        Vector3 pos = this.transform.position;
-
                         Rigidbody theRB = this.GetComponent<Rigidbody>();
                         theRB.velocity = Vector3.zero;
                         theRB.isKinematic = true;
                         theRB.useGravity = false;
                         theRB.collisionDetectionMode = CollisionDetectionMode.ContinuousSpeculative;
 
-                        this.transform.position = pos;
+                        this.transform.position = collision.GetContact(0).point;
                     }
                     break;
             }

@@ -19,13 +19,13 @@ public class WeaponController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButton(0))
         {
             // Fire
             GameObject newProjectile = Instantiate(projectilePrefab);
 
             newProjectile.transform.position = projectileSpawnPoint.transform.position;
-            newProjectile.transform.rotation = projectileSpawnPoint.transform.rotation;
+            newProjectile.transform.rotation = projectileSpawnPoint  .transform.rotation;
             newProjectile.GetComponent<Rigidbody>().AddForce(projectileSpawnPoint.transform.forward * projectileForce);
 
         }

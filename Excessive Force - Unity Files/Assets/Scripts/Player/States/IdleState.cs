@@ -26,6 +26,10 @@ public class IdleState : PlayerState
         {
             thePlayer.ChangeState(thePlayer.playerJumping);
         }
+        else if (Input.GetKeyDown(KeyCode.LeftShift))
+        {
+            thePlayer.ChangeState(thePlayer.playerDodging);
+        }
         else if (!thePlayer.IsGrounded())
         {
             thePlayer.ChangeState(thePlayer.playerFalling);
