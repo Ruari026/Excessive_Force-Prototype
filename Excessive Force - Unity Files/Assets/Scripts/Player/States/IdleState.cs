@@ -26,15 +26,10 @@ public class IdleState : PlayerState
         {
             thePlayer.ChangeState(thePlayer.playerJumping);
         }
-        else if (Input.GetKeyDown(KeyCode.LeftShift))
-        {
-            thePlayer.ChangeState(thePlayer.playerDodging);
-        }
         else if (!thePlayer.IsGrounded())
         {
             thePlayer.ChangeState(thePlayer.playerFalling);
         }
-
         
         //Checking Difference between hip rotation & spine rotation
         float difference = Quaternion.Angle(thePlayer.modelHips.transform.rotation, thePlayer.modelSpine.transform.rotation);
@@ -50,6 +45,16 @@ public class IdleState : PlayerState
         else
         {
             thePlayer.modelHips.transform.eulerAngles = hipRotation;
+        }
+
+        // Weapon Controls
+        if (Input.GetMouseButtonDown(0))
+        {
+            thePlayer.playerWeapon.Fire();
+        }
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            thePlayer.playerWeapon.Reload();
         }
     }
 

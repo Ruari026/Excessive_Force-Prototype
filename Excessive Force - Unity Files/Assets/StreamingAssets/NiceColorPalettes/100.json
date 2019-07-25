@@ -8,7 +8,8 @@
                 "#e0e4cc",
                 "#f38630",
                 "#fa6900"
-            ]
+            ],
+            "description": ""
         },
         {
             "name": "",
@@ -18,7 +19,8 @@
                 "#f9cdad",
                 "#c8c8a9",
                 "#83af9b"
-            ]
+            ],
+            "description": ""
         },
         {
             "name": "",
@@ -28,7 +30,8 @@
                 "#c02942",
                 "#542437",
                 "#53777a"
-            ]
+            ],
+            "description": ""
         },
         {
             "name": "",
@@ -38,27 +41,30 @@
                 "#c7f464",
                 "#ff6b6b",
                 "#c44d58"
-            ]
+            ],
+            "description": ""
         },
         {
-            "name": "",
+            "name": "Chocolate Brownie",
             "palette": [
                 "#774f38",
                 "#e08e79",
                 "#f1d4af",
                 "#ece5ce",
                 "#c5e0dc"
-            ]
+            ],
+            "description": ""
         },
         {
-            "name": "",
+            "name": "Meteor",
             "palette": [
                 "#e8ddcb",
                 "#cdb380",
                 "#036564",
                 "#033649",
                 "#031634"
-            ]
+            ],
+            "description": ""
         },
         {
             "name": "StarBurst",
@@ -68,7 +74,8 @@
                 "#e97f02",
                 "#f8ca00",
                 "#8a9b0f"
-            ]
+            ],
+            "description": ""
         },
         {
             "name": "",
@@ -78,17 +85,19 @@
                 "#45ada8",
                 "#9de0ad",
                 "#e5fcc2"
-            ]
+            ],
+            "description": ""
         },
         {
-            "name": "",
+            "name": "Teddy",
             "palette": [
                 "#00a0b0",
                 "#6a4a3c",
                 "#cc333f",
                 "#eb6841",
                 "#edc951"
-            ]
+            ],
+            "description": ""
         },
         {
             "name": "Rose",
@@ -98,7 +107,8 @@
                 "#c6a49a",
                 "#c6e5d9",
                 "#f4ead5"
-            ]
+            ],
+            "description": ""
         },
         {
             "name": "",
@@ -108,7 +118,8 @@
                 "#dad8a7",
                 "#ff9e9d",
                 "#ff3d7f"
-            ]
+            ],
+            "description": ""
         },
         {
             "name": "",
@@ -118,7 +129,8 @@
                 "#d5ded9",
                 "#7a6a53",
                 "#99b2b7"
-            ]
+            ],
+            "description": ""
         },
         {
             "name": "Slime Ball",
@@ -128,7 +140,8 @@
                 "#f2e9e1",
                 "#1c140d",
                 "#cbe86b"
-            ]
+            ],
+            "description": ""
         },
         {
             "name": "",
@@ -138,17 +151,19 @@
                 "#555152",
                 "#2e2633",
                 "#99173c"
-            ]
+            ],
+            "description": ""
         },
         {
-            "name": "Oceanic",
+            "name": "Deep Sea Diving",
             "palette": [
                 "#343838",
                 "#005f6b",
                 "#008c9e",
                 "#00b4cc",
                 "#00dffc"
-            ]
+            ],
+            "description": ""
         },
         {
             "name": "",
@@ -158,7 +173,8 @@
                 "#b38184",
                 "#f0b49e",
                 "#f7e4be"
-            ]
+            ],
+            "description": ""
         },
         {
             "name": "",
@@ -168,7 +184,8 @@
                 "#f9d423",
                 "#ede574",
                 "#e1f5c4"
-            ]
+            ],
+            "description": ""
         },
         {
             "name": "",
@@ -178,7 +195,8 @@
                 "#ff847c",
                 "#e84a5f",
                 "#2a363b"
-            ]
+            ],
+            "description": ""
         },
         {
             "name": "",
@@ -188,7 +206,8 @@
                 "#f6f7bd",
                 "#e6ac27",
                 "#bf4d28"
-            ]
+            ],
+            "description": ""
         },
         {
             "name": "",
@@ -198,7 +217,8 @@
                 "#f9f2e7",
                 "#aee239",
                 "#8fbe00"
-            ]
+            ],
+            "description": ""
         },
         {
             "name": "",
@@ -208,7 +228,8 @@
                 "#64908a",
                 "#e8caa4",
                 "#cc2a41"
-            ]
+            ],
+            "description": ""
         },
         {
             "name": "",
@@ -218,7 +239,8 @@
                 "#d3ce3d",
                 "#f1efa5",
                 "#60b99a"
-            ]
+            ],
+            "description": ""
         },
         {
             "name": "",
@@ -228,7 +250,8 @@
                 "#a8caba",
                 "#cad7b2",
                 "#ebe3aa"
-            ]
+            ],
+            "description": ""
         },
         {
             "name": "Forest Floor",
@@ -238,7 +261,8 @@
                 "#88a65e",
                 "#bfb35a",
                 "#f2c45a"
-            ]
+            ],
+            "description": ""
         },
         {
             "name": "",
@@ -248,7 +272,8 @@
                 "#f5634a",
                 "#ed303c",
                 "#3b8183"
-            ]
+            ],
+            "description": ""
         },
         {
             "name": "",
@@ -258,7 +283,8 @@
                 "#d4ee5e",
                 "#e1edb9",
                 "#f0f2eb"
-            ]
+            ],
+            "description": ""
         },
         {
             "name": "",
@@ -268,17 +294,19 @@
                 "#c06c84",
                 "#6c5b7b",
                 "#355c7d"
-            ]
+            ],
+            "description": ""
         },
         {
-            "name": "",
+            "name": "SpaceSuit",
             "palette": [
                 "#d1e751",
                 "#ffffff",
                 "#000000",
                 "#4dbce9",
                 "#26ade4"
-            ]
+            ],
+            "description": ""
         },
         {
             "name": "Jungle Canopy",
@@ -288,17 +316,19 @@
                 "#88c425",
                 "#bef202",
                 "#eafde6"
-            ]
+            ],
+            "description": ""
         },
         {
-            "name": "",
+            "name": "Gold Nugget",
             "palette": [
                 "#5e412f",
                 "#fcebb6",
                 "#78c0a8",
                 "#f07818",
                 "#f0a830"
-            ]
+            ],
+            "description": ""
         },
         {
             "name": "The Bee",
@@ -308,7 +338,8 @@
                 "#f27435",
                 "#f02475",
                 "#3b2d38"
-            ]
+            ],
+            "description": ""
         },
         {
             "name": "",
@@ -318,7 +349,8 @@
                 "#e4844a",
                 "#e8bf56",
                 "#e2f7ce"
-            ]
+            ],
+            "description": ""
         },
         {
             "name": "Granite",
@@ -328,7 +360,8 @@
                 "#696758",
                 "#45484b",
                 "#36393b"
-            ]
+            ],
+            "description": ""
         },
         {
             "name": "Terra Firma",
@@ -338,7 +371,8 @@
                 "#86b8b1",
                 "#f2d694",
                 "#fa2a00"
-            ]
+            ],
+            "description": ""
         },
         {
             "name": "Alien Goo",
@@ -348,7 +382,8 @@
                 "#0d6759",
                 "#7ab317",
                 "#a0c55f"
-            ]
+            ],
+            "description": ""
         },
         {
             "name": "",
@@ -358,7 +393,8 @@
                 "#f2f26f",
                 "#fff7bd",
                 "#95cfb7"
-            ]
+            ],
+            "description": ""
         },
         {
             "name": "",
@@ -368,7 +404,8 @@
                 "#2a2829",
                 "#493736",
                 "#7b3b3b"
-            ]
+            ],
+            "description": ""
         },
         {
             "name": "",
@@ -378,7 +415,8 @@
                 "#eedd99",
                 "#eec290",
                 "#eeaa88"
-            ]
+            ],
+            "description": ""
         },
         {
             "name": "",
@@ -388,17 +426,19 @@
                 "#ffbe40",
                 "#ef746f",
                 "#ab3e5b"
-            ]
+            ],
+            "description": ""
         },
         {
-            "name": "",
+            "name": "Basic",
             "palette": [
                 "#a3a948",
                 "#edb92e",
                 "#f85931",
                 "#ce1836",
                 "#009989"
-            ]
+            ],
+            "description": ""
         },
         {
             "name": "Halloween",
@@ -408,7 +448,8 @@
                 "#601848",
                 "#c04848",
                 "#f07241"
-            ]
+            ],
+            "description": ""
         },
         {
             "name": "",
@@ -418,7 +459,8 @@
                 "#b8af03",
                 "#ccbf82",
                 "#e33258"
-            ]
+            ],
+            "description": ""
         },
         {
             "name": "",
@@ -428,7 +470,8 @@
                 "#fc3a51",
                 "#f5b349",
                 "#e8d5b9"
-            ]
+            ],
+            "description": ""
         },
         {
             "name": "",
@@ -438,7 +481,8 @@
                 "#c5ceae",
                 "#f0e2a4",
                 "#f4ebc3"
-            ]
+            ],
+            "description": ""
         },
         {
             "name": "",
@@ -448,7 +492,8 @@
                 "#c0d860",
                 "#f0f0d8",
                 "#604848"
-            ]
+            ],
+            "description": ""
         },
         {
             "name": "",
@@ -458,7 +503,8 @@
                 "#dadabd",
                 "#ecdbbc",
                 "#fedcba"
-            ]
+            ],
+            "description": ""
         },
         {
             "name": "",
@@ -468,7 +514,8 @@
                 "#ffd3b5",
                 "#ffaaa6",
                 "#ff8c94"
-            ]
+            ],
+            "description": ""
         },
         {
             "name": "Spacesuit",
@@ -478,7 +525,8 @@
                 "#dfba69",
                 "#5a2e2e",
                 "#2a2c31"
-            ]
+            ],
+            "description": ""
         },
         {
             "name": "",
@@ -488,7 +536,8 @@
                 "#13747d",
                 "#0abfbc",
                 "#fcf7c5"
-            ]
+            ],
+            "description": ""
         },
         {
             "name": "",
@@ -498,7 +547,8 @@
                 "#c8cf02",
                 "#f8fcc1",
                 "#1693a7"
-            ]
+            ],
+            "description": ""
         },
         {
             "name": "Coral",
@@ -508,7 +558,8 @@
                 "#b3e099",
                 "#ffeaad",
                 "#d14334"
-            ]
+            ],
+            "description": ""
         },
         {
             "name": "",
@@ -518,7 +569,8 @@
                 "#eb7b59",
                 "#cf4647",
                 "#524656"
-            ]
+            ],
+            "description": ""
         },
         {
             "name": "Glacial",
@@ -528,7 +580,8 @@
                 "#4f8699",
                 "#6a5e72",
                 "#563444"
-            ]
+            ],
+            "description": ""
         },
         {
             "name": "",
@@ -538,7 +591,8 @@
                 "#e15e32",
                 "#c0d23e",
                 "#e5f04c"
-            ]
+            ],
+            "description": ""
         },
         {
             "name": "",
@@ -548,7 +602,8 @@
                 "#94c7b6",
                 "#403b33",
                 "#d3643b"
-            ]
+            ],
+            "description": ""
         },
         {
             "name": "",
@@ -558,7 +613,8 @@
                 "#987f69",
                 "#e3ad40",
                 "#fcd036"
-            ]
+            ],
+            "description": ""
         },
         {
             "name": "",
@@ -568,7 +624,8 @@
                 "#ebebbc",
                 "#bce3c5",
                 "#82b3ae"
-            ]
+            ],
+            "description": ""
         },
         {
             "name": "",
@@ -578,7 +635,8 @@
                 "#b28774",
                 "#f88f79",
                 "#f6aa93"
-            ]
+            ],
+            "description": ""
         },
         {
             "name": "",
@@ -588,7 +646,8 @@
                 "#83988e",
                 "#bcdea5",
                 "#e6f9bc"
-            ]
+            ],
+            "description": ""
         },
         {
             "name": "",
@@ -598,7 +657,8 @@
                 "#b7d1a3",
                 "#dee8be",
                 "#fcf7d3"
-            ]
+            ],
+            "description": ""
         },
         {
             "name": "Hellfire",
@@ -608,7 +668,8 @@
                 "#a30006",
                 "#c21a01",
                 "#f03c02"
-            ]
+            ],
+            "description": ""
         },
         {
             "name": "Rage",
@@ -618,7 +679,8 @@
                 "#b11623",
                 "#292c37",
                 "#cccccc"
-            ]
+            ],
+            "description": ""
         },
         {
             "name": "",
@@ -628,7 +690,8 @@
                 "#fcd9e5",
                 "#fbc5d8",
                 "#f1396d"
-            ]
+            ],
+            "description": ""
         },
         {
             "name": "",
@@ -638,7 +701,8 @@
                 "#93ccc6",
                 "#6cbdb5",
                 "#1a1f1e"
-            ]
+            ],
+            "description": ""
         },
         {
             "name": "Ace of Diamonds",
@@ -648,7 +712,8 @@
                 "#333333",
                 "#990100",
                 "#b90504"
-            ]
+            ],
+            "description": ""
         },
         {
             "name": "",
@@ -658,7 +723,8 @@
                 "#e9f2f9",
                 "#3a89c9",
                 "#f26c4f"
-            ]
+            ],
+            "description": ""
         },
         {
             "name": "",
@@ -668,7 +734,8 @@
                 "#faca66",
                 "#f7a541",
                 "#f45d4c"
-            ]
+            ],
+            "description": ""
         },
         {
             "name": "",
@@ -678,7 +745,8 @@
                 "#fbeec2",
                 "#61a6ab",
                 "#accec0"
-            ]
+            ],
+            "description": ""
         },
         {
             "name": "",
@@ -688,7 +756,8 @@
                 "#fab87f",
                 "#f87e7b",
                 "#b05574"
-            ]
+            ],
+            "description": ""
         },
         {
             "name": "",
@@ -698,7 +767,8 @@
                 "#e0dfb1",
                 "#a5a36c",
                 "#535233"
-            ]
+            ],
+            "description": ""
         },
         {
             "name": "",
@@ -708,7 +778,8 @@
                 "#fea6a2",
                 "#f9d6ac",
                 "#ffe9af"
-            ]
+            ],
+            "description": ""
         },
         {
             "name": "",
@@ -718,7 +789,8 @@
                 "#3ca2a2",
                 "#92c7a3",
                 "#dfece6"
-            ]
+            ],
+            "description": ""
         },
         {
             "name": "",
@@ -728,7 +800,8 @@
                 "#c8ff00",
                 "#fa023c",
                 "#4b000f"
-            ]
+            ],
+            "description": ""
         },
         {
             "name": "Chilled Out",
@@ -738,7 +811,8 @@
                 "#61ada0",
                 "#248f8d",
                 "#605063"
-            ]
+            ],
+            "description": ""
         },
         {
             "name": "",
@@ -748,7 +822,8 @@
                 "#d0ecea",
                 "#9fd6d2",
                 "#8b7a5e"
-            ]
+            ],
+            "description": ""
         },
         {
             "name": "",
@@ -758,7 +833,8 @@
                 "#5c5863",
                 "#a85163",
                 "#ff1f4c"
-            ]
+            ],
+            "description": ""
         },
         {
             "name": "",
@@ -768,7 +844,8 @@
                 "#f56218",
                 "#ff9d2e",
                 "#919167"
-            ]
+            ],
+            "description": ""
         },
         {
             "name": "",
@@ -778,7 +855,8 @@
                 "#8ebe94",
                 "#ccfc8e",
                 "#dc5b3e"
-            ]
+            ],
+            "description": ""
         },
         {
             "name": "",
@@ -788,7 +866,8 @@
                 "#e8175d",
                 "#474747",
                 "#363636"
-            ]
+            ],
+            "description": ""
         },
         {
             "name": "",
@@ -798,7 +877,8 @@
                 "#474843",
                 "#9d9d93",
                 "#c5cfc6"
-            ]
+            ],
+            "description": ""
         },
         {
             "name": "",
@@ -808,7 +888,8 @@
                 "#2fb8ac",
                 "#93a42a",
                 "#ecbe13"
-            ]
+            ],
+            "description": ""
         },
         {
             "name": "",
@@ -818,7 +899,8 @@
                 "#a0cab5",
                 "#cde9ca",
                 "#f1edd0"
-            ]
+            ],
+            "description": ""
         },
         {
             "name": "",
@@ -828,7 +910,8 @@
                 "#fb6b41",
                 "#f6d86b",
                 "#339194"
-            ]
+            ],
+            "description": ""
         },
         {
             "name": "",
@@ -838,17 +921,19 @@
                 "#fabe28",
                 "#88c100",
                 "#00c176"
-            ]
+            ],
+            "description": ""
         },
         {
-            "name": "",
+            "name": "Solar Flare",
             "palette": [
                 "#ffedbf",
                 "#f7803c",
                 "#f54828",
                 "#2e0d23",
                 "#f8e4c1"
-            ]
+            ],
+            "description": ""
         },
         {
             "name": "",
@@ -858,7 +943,8 @@
                 "#94ba65",
                 "#2790b0",
                 "#2b4e72"
-            ]
+            ],
+            "description": ""
         },
         {
             "name": "",
@@ -868,7 +954,8 @@
                 "#fefeeb",
                 "#f8f4e4",
                 "#a5b3aa"
-            ]
+            ],
+            "description": ""
         },
         {
             "name": "",
@@ -878,7 +965,8 @@
                 "#ffb88c",
                 "#ffd0b3",
                 "#f5e0d3"
-            ]
+            ],
+            "description": ""
         },
         {
             "name": "",
@@ -888,7 +976,8 @@
                 "#66b6ab",
                 "#5b7c8d",
                 "#4f2958"
-            ]
+            ],
+            "description": ""
         },
         {
             "name": "",
@@ -898,7 +987,8 @@
                 "#b3204d",
                 "#412e28",
                 "#151101"
-            ]
+            ],
+            "description": ""
         },
         {
             "name": "",
@@ -908,7 +998,8 @@
                 "#9a947c",
                 "#748b83",
                 "#5b756c"
-            ]
+            ],
+            "description": ""
         },
         {
             "name": "Ghost",
@@ -918,7 +1009,8 @@
                 "#cdcfb7",
                 "#d6e6c3",
                 "#fafbe3"
-            ]
+            ],
+            "description": ""
         },
         {
             "name": "",
@@ -928,7 +1020,8 @@
                 "#ddd9ab",
                 "#f7af63",
                 "#633d2e"
-            ]
+            ],
+            "description": ""
         },
         {
             "name": "Cyber Style",
@@ -938,7 +1031,8 @@
                 "#36544f",
                 "#1f5f61",
                 "#0b8185"
-            ]
+            ],
+            "description": ""
         },
         {
             "name": "Party Time",
@@ -948,17 +1042,19 @@
                 "#ff00aa",
                 "#aa00ff",
                 "#00aaff"
-            ]
+            ],
+            "description": ""
         },
         {
-            "name": "",
+            "name": "Revenant",
             "palette": [
                 "#d1313d",
                 "#e5625c",
                 "#f9bf76",
                 "#8eb2c5",
                 "#615375"
-            ]
+            ],
+            "description": ""
         },
         {
             "name": "",
@@ -968,7 +1064,8 @@
                 "#fad3b2",
                 "#ffba7f",
                 "#ff9c97"
-            ]
+            ],
+            "description": ""
         },
         {
             "name": "Angel",
@@ -978,17 +1075,19 @@
                 "#e1b866",
                 "#bd5532",
                 "#373b44"
-            ]
+            ],
+            "description": ""
         },
         {
-            "name": "",
+            "name": "Cake Icing",
             "palette": [
                 "#805841",
                 "#dcf7f3",
                 "#fffcdd",
                 "#ffd8d8",
                 "#f5a2a2"
-            ]
+            ],
+            "description": ""
         }
     ]
 }

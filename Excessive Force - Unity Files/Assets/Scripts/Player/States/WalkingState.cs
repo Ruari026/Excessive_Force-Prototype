@@ -22,15 +22,12 @@ public class WalkingState : PlayerState
         {
             thePlayer.ChangeState(thePlayer.playerJumping);
         }
-        else if (Input.GetKeyDown(KeyCode.LeftShift))
-        {
-            thePlayer.ChangeState(thePlayer.playerDodging);
-        }
         else if (!thePlayer.IsGrounded())
         {
             thePlayer.ChangeState(thePlayer.playerFalling);
         }
 
+        // State Animations
         Vector3 movementDirection = thePlayer.transform.forward;
         if (Input.GetAxis("Vertical") > 0)
         {
@@ -41,10 +38,21 @@ public class WalkingState : PlayerState
             movementDirection -= thePlayer.transform.right * Input.GetAxis("Horizontal");
         }
         thePlayer.modelHips.transform.rotation = Quaternion.Lerp(thePlayer.modelHips.transform.rotation, Quaternion.LookRotation(movementDirection, Vector3.up), Time.deltaTime * thePlayer.hipRotationSpeed);
+
+        // Weapon Controls
+        if (Input.GetMouseButtonDown(0))
+        {
+            thePlayer.playerWeapon.Fire();
+        }
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            thePlayer.playerWeapon.Reload();
+        }
     }
 
     public override void FixedUpdateState(PlayerController thePlayer)
     {
+        // State Movement
         thePlayer.MovePlayer(thePlayer.groundAccel);
     }
 }

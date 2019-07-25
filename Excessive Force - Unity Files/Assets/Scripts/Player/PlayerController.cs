@@ -12,7 +12,7 @@ public class PlayerController : MonoBehaviour
     public WalkingState playerMoving;
     public JumpingState playerJumping;
     public FallingState playerFalling;
-    public DodgingState playerDodging;
+    public DisabledState playerDisabled;
 
     // Player Movement Information
     [Header("Ground Movement")]
@@ -51,7 +51,7 @@ public class PlayerController : MonoBehaviour
         playerMoving = new WalkingState();
         playerJumping = new JumpingState();
         playerFalling = new FallingState();
-        playerDodging = new DodgingState();
+        playerDisabled = new DisabledState();
         
         this.currentState = playerIdle;
     }
@@ -69,8 +69,7 @@ public class PlayerController : MonoBehaviour
             transform.rotation = new Quaternion(0, cameraMount.transform.rotation.y, 0, cameraMount.transform.rotation.w);
 
             modelSpine.transform.rotation = new Quaternion(0, cameraMount.transform.rotation.y, 0, cameraMount.transform.rotation.w);
-            modelSpine.transform.localEulerAngles = new Vector3(cameraMount.transform.eulerAngles.x, modelSpine.transform.localEulerAngles.y, modelSpine.transform.localEulerAngles.z);
-
+            modelSpine.transform.localEulerAngles = new Vector3(cameraMount.transform.eulerAngles.x - 4, modelSpine.transform.localEulerAngles.y, modelSpine.transform.localEulerAngles.z);
         }
 
         this.currentState.UpdateState(this);
@@ -102,8 +101,6 @@ public class PlayerController : MonoBehaviour
     */
     public void ChangeState(PlayerState newState)
     {
-        Debug.Log("Player Has Entered New State: " + newState);
-
         this.currentState = newState;
         this.currentState.StartState(this);
     }

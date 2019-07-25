@@ -18,6 +18,7 @@ public class JumpingState : PlayerState
 
     override public void UpdateState(PlayerController thePlayer)
     {
+        // Controlling Jump Time
         if (Input.GetKey(KeyCode.Space))
         {
             jumpDuration += Time.deltaTime;
@@ -27,6 +28,7 @@ public class JumpingState : PlayerState
             jumpDuration = jumpDurationThreshold;
         }
 
+        // State Changes
         if (thePlayer.IsGrounded() && jumpDuration >= jumpDurationThreshold)
         {
             if (Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0)
@@ -38,15 +40,25 @@ public class JumpingState : PlayerState
                 thePlayer.ChangeState(thePlayer.playerIdle);
             }
         }
+
+        // Weapon Controls
+        if (Input.GetMouseButtonDown(0))
+        {
+            thePlayer.playerWeapon.Fire();
+        }
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            thePlayer.playerWeapon.Reload();
+        }
     }
 
     public override void FixedUpdateState(PlayerController thePlayer)
     {
+        // State Movement
         if (jumpDuration < jumpDurationThreshold)
         {
             thePlayer.theRB.velocity = new Vector3(thePlayer.theRB.velocity.x, thePlayer.jumpSpeed, thePlayer.theRB.velocity.z);
         }
-
         if (Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0)
         {
             thePlayer.MovePlayer(thePlayer.airAccel);

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerState
+public abstract class PlayerState
 {
     virtual public void StartState(PlayerController thePlayer)
     {
