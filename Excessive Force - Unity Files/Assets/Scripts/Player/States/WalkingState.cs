@@ -40,14 +40,7 @@ public class WalkingState : PlayerState
         thePlayer.modelHips.transform.rotation = Quaternion.Lerp(thePlayer.modelHips.transform.rotation, Quaternion.LookRotation(movementDirection, Vector3.up), Time.deltaTime * thePlayer.hipRotationSpeed);
 
         // Weapon Controls
-        if (Input.GetMouseButtonDown(0))
-        {
-            thePlayer.playerWeapon.Fire();
-        }
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            thePlayer.playerWeapon.Reload();
-        }
+        thePlayer.playerWeapon.GunInput();
     }
 
     public override void FixedUpdateState(PlayerController thePlayer)

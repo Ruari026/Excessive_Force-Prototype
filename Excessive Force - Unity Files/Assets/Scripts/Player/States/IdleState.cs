@@ -48,14 +48,7 @@ public class IdleState : PlayerState
         }
 
         // Weapon Controls
-        if (Input.GetMouseButtonDown(0))
-        {
-            thePlayer.playerWeapon.Fire();
-        }
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            thePlayer.playerWeapon.Reload();
-        }
+        thePlayer.playerWeapon.GunInput();
     }
 
     public override void FixedUpdateState(PlayerController thePlayer)

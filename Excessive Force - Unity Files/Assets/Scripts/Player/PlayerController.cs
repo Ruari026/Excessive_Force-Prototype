@@ -14,6 +14,9 @@ public class PlayerController : MonoBehaviour
     public FallingState playerFalling;
     public DisabledState playerDisabled;
 
+    public delegate void EventPlayerStateChange(PlayerState newState);
+    public static EventPlayerStateChange OnEventPlayerStateChange;
+
     // Player Movement Information
     [Header("Ground Movement")]
     public float speed = 15;
@@ -72,6 +75,11 @@ public class PlayerController : MonoBehaviour
             modelSpine.transform.localEulerAngles = new Vector3(cameraMount.transform.eulerAngles.x - 4, modelSpine.transform.localEulerAngles.y, modelSpine.transform.localEulerAngles.z);
         }
 
+        // State Handling
+        if (this.currentState == null)
+        {
+            ChangeState(this.playerIdle);
+        }
         this.currentState.UpdateState(this);
 
         // Respawn If Player Falls Out Of Bounds
@@ -101,6 +109,8 @@ public class PlayerController : MonoBehaviour
     */
     public void ChangeState(PlayerState newState)
     {
+        OnEventPlayerStateChange?.Invoke(newState);
+
         this.currentState = newState;
         this.currentState.StartState(this);
     }
@@ -108,19 +118,19 @@ public class PlayerController : MonoBehaviour
     public IEnumerator ChangeStateTemporary(PlayerState tempState, float time)
     {
         PlayerState stateBefore = this.currentState;
-        this.currentState = tempState;
+        ChangeState(tempState);
 
         yield return new WaitForSeconds(time);
 
-        this.currentState = stateBefore;
+        ChangeState(stateBefore);
     }
     public IEnumerator ChangeStateTemporary(PlayerState tempState, PlayerState newState, float time)
     {
-        this.currentState = tempState;
+        ChangeState(tempState);
 
         yield return new WaitForSeconds(time);
 
-        this.currentState = newState;
+        ChangeState(newState);
     }
     
     

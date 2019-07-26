@@ -7,6 +7,9 @@ public class EntityDamageController : MonoBehaviour
     public float currentHealth;
     public float maxHealth;
 
+    public delegate void EventEntityDeath(EntityDamageController entity);
+    public static EventEntityDeath onEventEntityDeath;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -25,6 +28,7 @@ public class EntityDamageController : MonoBehaviour
 
         if (currentHealth <= 0)
         {
+            EntityDamageController.onEventEntityDeath?.Invoke(this);
             KillEntity();
         }
     }
