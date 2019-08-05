@@ -15,6 +15,7 @@ public class HexPositionSnapping : MonoBehaviour
     {
         if (Selection.Contains(this.gameObject))
         {
+            // Snapping Position
             Vector3 snapPos = this.transform.position;
 
             snapPos.x = Mathf.Round((snapPos.x / xLock)) * xLock;
