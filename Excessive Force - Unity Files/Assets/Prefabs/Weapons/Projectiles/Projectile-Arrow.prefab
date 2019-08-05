@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 2503040201892200938}
   - component: {fileID: 1623409265019634517}
   - component: {fileID: 7618970480062402673}
+  - component: {fileID: -5601413208687653779}
+  - component: {fileID: 459103468138939187}
   m_Layer: 9
   m_Name: Projectile-Arrow
   m_TagString: Projectile
@@ -65,18 +67,37 @@ MonoBehaviour:
   damage: 1
   elementalDamage: 1
   elementalChance: 1
---- !u!136 &4494302920721943281
+--- !u!95 &-5601413208687653779
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3451490567624355354}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4a064212b24c32d41b4ec43d335484a1, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!136 &459103468138939187
 CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5534294708597961776}
+  m_GameObject: {fileID: 3451490567624355354}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.025
-  m_Height: 0.25
+  m_Radius: 0.1
+  m_Height: 1
   m_Direction: 2
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &4606107789029371193
@@ -173,12 +194,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2815560fdc7e69f4a992b06b317890d2, type: 3}
---- !u!1 &5534294708597961776 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: 2815560fdc7e69f4a992b06b317890d2,
-    type: 3}
-  m_PrefabInstance: {fileID: 4606107789029371193}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8833417523951617571 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 2815560fdc7e69f4a992b06b317890d2,

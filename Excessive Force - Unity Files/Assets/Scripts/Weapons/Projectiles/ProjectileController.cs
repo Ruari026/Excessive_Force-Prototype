@@ -27,8 +27,11 @@ public class ProjectileController : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag != "Projectile" && collision.gameObject.tag != source)
+        string s = collision.gameObject.tag;
+        if (s != "Projectile".ToString() && s != source.ToString())
         {
+            OnProjectileHit(collision);
+
             if (collision.gameObject.GetComponent<EntityDamageController>())
             {
                 EntityDamageController dc = collision.gameObject.GetComponent<EntityDamageController>();
@@ -36,29 +39,6 @@ public class ProjectileController : MonoBehaviour
                 // Damaging Hit Entitys
                 dc.DamageEntity(this.damage);
             }
-
-            OnProjectileHit(collision);
-            // ToDo: Use This For Subclassed Projectile Controllers
-            /*switch (pType)
-            {
-                case (ProjectileType.BRITTLE):
-                    {
-                        Destroy(this.gameObject);
-                    }
-                    break;
-
-                case (ProjectileType.PIERCING):
-                    {
-                        Rigidbody theRB = this.GetComponent<Rigidbody>();
-                        theRB.velocity = Vector3.zero;
-                        theRB.isKinematic = true;
-                        theRB.useGravity = false;
-                        theRB.collisionDetectionMode = CollisionDetectionMode.ContinuousSpeculative;
-
-                        this.transform.position = collision.GetContact(0).point;
-                    }
-                    break;
-            }*/
         }
     }
 

@@ -389,7 +389,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6971806438356077959}
-  - component: {fileID: 6971806438356077956}
+  - component: {fileID: 1150162964752200968}
   m_Layer: 2
   m_Name: PlayerWeapon
   m_TagString: Untagged
@@ -413,7 +413,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6971806438356077956
+--- !u!114 &1150162964752200968
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -422,22 +422,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 6971806438356077958}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 14a9ad89ddcc47c4592f2344d969b472, type: 3}
+  m_Script: {fileID: 11500000, guid: d1b7d53baefe81d4b9b361d5e94e03a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponModel: {fileID: 6971806436554801508}
+  damage: 1
+  accuracy: 100
+  fireRate: 1
+  reloadSpeed: 1
+  maxMagazineSize: 1
+  currentMagazineSize: 1
+  projectilePrefab: {fileID: 0}
+  projectileForce: 10
+  projectileSpawnPoint: {fileID: 7300365773172414435}
+  weaponModel: {fileID: 6971806436369899427}
   modelHand: {fileID: 0}
   aimMount: {fileID: 6971806437687418401}
   playerSpine: {fileID: 0}
-  projectileSpawnPoint: {fileID: 7300365773172414435}
-  damage: 10
-  accuracy: 100
-  fireRate: 10
-  reloadSpeed: 4
-  magazineSize: 20
-  projectilePrefab: {fileID: 3451490567624355354, guid: cc06ecb0c8cb61d4796ca8ca81778415,
-    type: 3}
-  projectileForce: 5000
 --- !u!1 &7473726747099793872
 GameObject:
   m_ObjectHideFlags: 0

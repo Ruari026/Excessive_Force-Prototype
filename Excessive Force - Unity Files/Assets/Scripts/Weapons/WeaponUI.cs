@@ -22,13 +22,13 @@ public class WeaponUI : MonoBehaviour
     // Event Management
     private void OnEnable()
     {
-        WeaponController.onEventPlayerGunFire += GetWeaponInformation;
-        WeaponController.onEventPlayerGunReload += RunReloadUI;
+        PlayerWeaponController.OnEventPlayerGunFire += GetWeaponInformation;
+        PlayerWeaponController.OnEventPlayerGunReload += RunReloadUI;
     }
     private void OnDisable()
     {
-        WeaponController.onEventPlayerGunFire -= GetWeaponInformation;
-        WeaponController.onEventPlayerGunReload -= RunReloadUI;
+        PlayerWeaponController.OnEventPlayerGunFire -= GetWeaponInformation;
+        PlayerWeaponController.OnEventPlayerGunReload -= RunReloadUI;
     }
 
 
