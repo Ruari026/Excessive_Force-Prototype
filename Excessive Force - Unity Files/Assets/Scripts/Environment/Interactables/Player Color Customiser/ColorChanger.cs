@@ -196,7 +196,7 @@ public class ColorChanger : MonoBehaviour
 
         textureSprite.SetPixels(newColors);
         textureSprite.Apply();
-        File.WriteAllBytes(AssetDatabase.GetAssetPath(textureSprite), textureSprite.EncodeToPNG());
+        //File.WriteAllBytes(AssetDatabase.GetAssetPath(textureSprite), textureSprite.EncodeToPNG());
     }
 }
 

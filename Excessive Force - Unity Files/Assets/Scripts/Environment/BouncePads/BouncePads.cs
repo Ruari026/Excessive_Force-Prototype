@@ -8,6 +8,8 @@ public class BouncePads : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+        Debug.Log(collision.gameObject.name);
+
         if (collision.gameObject.GetComponent<Rigidbody>())
         {
             Rigidbody otherRB = collision.gameObject.GetComponent<Rigidbody>();

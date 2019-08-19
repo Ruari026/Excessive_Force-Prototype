@@ -83,7 +83,7 @@ public class PlayerController : MonoBehaviour
         this.currentState.UpdateState(this);
 
         // Respawn If Player Falls Out Of Bounds
-        if (this.transform.position.y < -10)
+        if (this.transform.position.y < RespawnManager.Instance.respawnPoint)
         {
             this.transform.position = Vector3.zero;
         }

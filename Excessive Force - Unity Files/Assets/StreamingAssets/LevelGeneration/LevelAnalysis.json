@@ -1,0 +1,58 @@
+{
+    "tileTypes": [
+        {
+            "tileTag": "FullFloor",
+            "numberOfTiles": 7,
+            "tileConnections": [
+                {
+                    "connectionTag": "FullFloor",
+                    "connectionAmount": 24
+                },
+                {
+                    "connectionTag": "Nothing",
+                    "connectionAmount": 2
+                },
+                {
+                    "connectionTag": "HalfFloor",
+                    "connectionAmount": 8
+                },
+                {
+                    "connectionTag": "TriFloor",
+                    "connectionAmount": 8
+                }
+            ]
+        },
+        {
+            "tileTag": "HalfFloor",
+            "numberOfTiles": 4,
+            "tileConnections": [
+                {
+                    "connectionTag": "FullFloor",
+                    "connectionAmount": 8
+                },
+                {
+                    "connectionTag": "Nothing",
+                    "connectionAmount": 4
+                },
+                {
+                    "connectionTag": "TriFloor",
+                    "connectionAmount": 4
+                }
+            ]
+        },
+        {
+            "tileTag": "TriFloor",
+            "numberOfTiles": 6,
+            "tileConnections": [
+                {
+                    "connectionTag": "HalfFloor",
+                    "connectionAmount": 4
+                },
+                {
+                    "connectionTag": "FullFloor",
+                    "connectionAmount": 8
+                }
+            ]
+        }
+    ]
+}

@@ -13,6 +13,7 @@ public class HexPositionSnapping : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+#if UNITY_EDITOR
         if (Selection.Contains(this.gameObject))
         {
             // Snapping Position
@@ -24,5 +25,6 @@ public class HexPositionSnapping : MonoBehaviour
 
             this.transform.position = snapPos;
         }
+#endif
     }
 }

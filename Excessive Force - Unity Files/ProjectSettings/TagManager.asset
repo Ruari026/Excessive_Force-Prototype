@@ -5,6 +5,14 @@ TagManager:
   serializedVersion: 2
   tags:
   - Projectile
+  - Room
+  - Corridor
+  - HalfFloor
+  - TriRamp
+  - TriFloor
+  - FullFloor
+  - FullRamp
+  - HalfRamp
   layers:
   - Default
   - TransparentFX
