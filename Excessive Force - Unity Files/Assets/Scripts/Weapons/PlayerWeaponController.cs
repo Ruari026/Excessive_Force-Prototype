@@ -15,7 +15,6 @@ public class PlayerWeaponController : WeaponController
 
     // Delegate Signatures
     public delegate void EventPlayerGunFire();
-
     public delegate void EventPlayerGunReload(float reloadTime);
 
     // Event Instances For EventPlayerGunFire

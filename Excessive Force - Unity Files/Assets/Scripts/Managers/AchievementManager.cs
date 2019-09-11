@@ -5,6 +5,7 @@ using UnityEngine;
 public class AchievementManager : MonoBehaviour
 {
     private static AchievementManager _instance;
+
     public static AchievementManager Instance
     {
         get

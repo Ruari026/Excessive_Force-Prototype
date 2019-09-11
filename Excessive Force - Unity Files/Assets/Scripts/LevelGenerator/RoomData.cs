@@ -214,3 +214,10 @@ public class RoomData : MonoBehaviour
         }
     }
 }
+
+public enum SymmetryType
+{
+    NONE,
+    BILATERAL,
+    TRILATERAL
+}

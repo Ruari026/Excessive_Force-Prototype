@@ -54,7 +54,10 @@ public class EyeAnimations : MonoBehaviour
         LookAtTarget(new GameObject[] { rightEye, leftEye });
 
         // Eye Expression
-        animController.SetInteger("EyeExpression", (int)currentExpression);
+        if (animController.gameObject.activeSelf)
+        {
+            animController.SetInteger("EyeExpression", (int)currentExpression);
+        }
     }
 
     /*

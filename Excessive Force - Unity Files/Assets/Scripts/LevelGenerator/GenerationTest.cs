@@ -15,8 +15,12 @@ public class GenerationTest : MonoBehaviour
     public GameObject hexSphere;
 
     [Header("Level Generation (Info)")]
-    public static int iterations = 75;
+    public static int iterations = 50;
     private List<GameObject> spawnedSections = new List<GameObject>();
+
+    public delegate void EventGenerationFinished();
+    public static event EventGenerationFinished OnEventGenetationFinished;
+
 
     // Start is called before the first frame update
     void Start()
@@ -27,117 +31,153 @@ public class GenerationTest : MonoBehaviour
 
     /*
     ====================================================================================================
-    Entry Point
+    Main Body Generation
     ====================================================================================================
     */
     private IEnumerator GenerateLevel()
     {
-        // Room Before Info
-        GameObject roomBefore;
-        RoomData beforeData;
-
-        // Room After Info
-        GameObject roomAfter;
-        RoomData afterData;
+        System.Diagnostics.Stopwatch stopWatch = new System.Diagnostics.Stopwatch();
+        stopWatch.Start();
+        Debug.Log("Generation Started (" + GenerationTest.iterations +   " Iterations): " + stopWatch.Elapsed);
 
         // Generating Start Room
-        roomBefore = Instantiate(startRoom, this.transform);
-        roomAfter = roomBefore;
-        spawnedSections.Add(roomBefore);
-        beforeData = roomBefore.GetComponent<RoomData>();
-        afterData = beforeData;
-
-        // Adding Spawn Point
-        GameObject spawn = Instantiate(spawnPoint, this.transform);
+        GameObject newRoom = Instantiate(startRoom, this.transform);
+        RoomData newData = newRoom.GetComponent<RoomData>();
+        spawnedSections.Add(newRoom);
 
         // Generating Rest Of The Level
         int i = iterations;
         bool spawnRoom = false;
         while (i > 0 || spawnRoom)
         {
-            // Selecting Connection Point
-            List<ConnectionPoint> possibleNextPoints = beforeData.GetPossibleConnectionPoints();
-            ConnectionPoint connection = possibleNextPoints[Random.Range(0, possibleNextPoints.Count)];
+            Debug.Log("Spawning New Room");
 
-            bool successful = false;
-            while (!successful)
+            bool placementSuccessful = false;
+
+            // Selecting Connection Point From Last Room In Spawned Rooms
+            List<ConnectionPoint> possibleNextPoints = spawnedSections[spawnedSections.Count - 1].GetComponent<RoomData>().GetPossibleConnectionPoints();
+            Debug.Log(possibleNextPoints.Count);
+
+            while(!placementSuccessful && possibleNextPoints.Count > 0)
             {
-                // Spawning Next Room
+                Debug.Log("Picking Connection Point To Spawn Off");
+
+                // Selecting Spawn Point
+                int cp = Random.Range(0, possibleNextPoints.Count);
+                ConnectionPoint connection = possibleNextPoints[cp];
+                possibleNextPoints.RemoveAt(cp);
+
+                // Starting List Of Spawnable Objects
+                List<GameObject> prefabsLeftToTry = new List<GameObject>();
                 if (spawnRoom)
                 {
-                    roomAfter = Instantiate(roomPrefabs[Random.Range(0, roomPrefabs.Count)], this.transform);
+                    // Spawning A Room
+                    prefabsLeftToTry = new List<GameObject>(roomPrefabs);
                 }
                 else
                 {
-                    roomAfter = Instantiate(corridorPrefabs[Random.Range(0, corridorPrefabs.Count)], this.transform);
+                    // Spawning A Corridor
+                    prefabsLeftToTry = new List<GameObject>(corridorPrefabs);
                 }
-                afterData = roomAfter.GetComponent<RoomData>();
 
-                // Aligning Next Room
-                roomAfter.transform.position = connection.transform.position + (connection.transform.forward * Vector3.Distance(roomAfter.transform.position, afterData.tileConnections[0].transform.position));
-                roomAfter.transform.rotation = connection.transform.rotation;
-
-                // Checking For Intersections
-                yield return new WaitForSeconds(0.1f);
-                if (!afterData.isColliding)
+                // Generate Room
+                while (!placementSuccessful && prefabsLeftToTry.Count > 0)
                 {
-                    successful = true;
+                    // Spawning Next Room
+                    int roomToSpawn = Random.Range(0, prefabsLeftToTry.Count);
+                    newRoom = Instantiate(prefabsLeftToTry[roomToSpawn], this.transform);
+                    prefabsLeftToTry.RemoveAt(roomToSpawn);
+                    newData = newRoom.GetComponent<RoomData>();
+
+                    // Aligning Next Room
+                    newRoom.transform.position = connection.transform.position + (connection.transform.forward * Vector3.Distance(newRoom.transform.position, newData.tileConnections[0].transform.position));
+                    newRoom.transform.rotation = connection.transform.rotation;
+
+                    // Giving Time For CollisionCheck
+                    yield return new WaitForSeconds(0.01f);
+                    if (!newData.isColliding)
+                    {
+                        placementSuccessful = true;
+                    }
+                    else
+                    {
+                        Debug.Log("Spawned Room Colliding, Removing New Room");
+                        DestroyImmediate(newRoom);
+                    }
                 }
-                else
+
+                if (placementSuccessful)
                 {
-                    DestroyImmediate(roomAfter);
+                    Debug.Log("Room Spawned Sucessfully: " + newRoom.gameObject.name);
+
+                    // Iterate
+                    connection.connectedTile = newData;
+                    newData.tileConnections[0].connectedTile = spawnedSections[spawnedSections.Count - 1].GetComponent<RoomData>();
+
+                    // Setting Data For Next Iteration
+                    spawnRoom = !spawnRoom;
+                    spawnedSections.Add(newRoom);
+
+                    // Iterating
+                    i--;
                 }
             }
-            
-            // Iterate
-            connection.connectedTile = afterData;
-            afterData.tileConnections[0].connectedTile = beforeData;
 
-            // Setting Data For Next Iteration
-            spawnRoom = !spawnRoom;
-            spawnedSections.Add(roomAfter);
-            roomBefore = roomAfter;
-            beforeData = afterData;
+            if (!placementSuccessful)
+            {
+                Debug.Log("No Spawn Point To Build Off");
 
-            // Iterating
-            i--;
+                // Step Back A Stage
+                DestroyImmediate(spawnedSections[spawnedSections.Count - 1]);
+                spawnedSections.RemoveAt(spawnedSections.Count - 1);
+
+                spawnRoom = !spawnRoom;
+
+                // Adding to remaining iterations to ensure the level length is accurate to intended iteration count
+                i++;
+            }
         }
 
-        // Setting Reset Plane Below The Level
-        SetDeathPlane();
-
-        // Adding End Point
-        GameObject end = GameObject.Instantiate(endPoint, this.transform);
-        end.transform.position = spawnedSections[spawnedSections.Count - 1].transform.position;
-
-        // Finishing Touches
-        DetailLevel();
-
+        // Setting Spawned Level To Be Playable
         foreach (GameObject g in spawnedSections)
         {
             g.GetComponent<RoomData>().CanCollisionCheck(false);
         }
+
+        DetailLevel();
+        SetDeathPlane();
+
+        if (OnEventGenetationFinished != null)
+        {
+            OnEventGenetationFinished.Invoke();
+        }
+        SceneTransitionController stc = SceneTransitionController.Instance;
+        stc.FinishLoading();
+
+        // Generation Finished
+        stopWatch.Stop();
+        Debug.Log("Generation Finished: " + stopWatch.Elapsed);
     }
 
 
     /*
     ====================================================================================================
-    Detail + Other Additions Generation
+    Finalising Level Details
     ====================================================================================================
     */
     private void DetailLevel()
     {
         // Getting Centre Point
-        Vector3 centrePoint = Vector3.zero;
+        Vector3 centerPoint = Vector3.zero;
         foreach (GameObject g in spawnedSections)
         {
-            centrePoint += g.transform.position;
+            centerPoint += g.transform.position;
         }
-        centrePoint /= spawnedSections.Count;
+        centerPoint /= spawnedSections.Count;
 
         // Setting HexSphere Position & Size
         // Setting Position
-        hexSphere.transform.position = centrePoint;
+        hexSphere.transform.position = centerPoint;
         // Setting Scale
         Vector3 furthestPoint = spawnedSections[0].transform.position;
         foreach (GameObject g in spawnedSections)
@@ -150,6 +190,14 @@ public class GenerationTest : MonoBehaviour
         float scale = Vector3.Distance(hexSphere.transform.position, furthestPoint);
         scale /= 2;
         hexSphere.transform.localScale = new Vector3(scale, scale, scale);
+
+        // Adding Start Point
+        GameObject levelStart = Instantiate(spawnPoint);
+        levelStart.transform.position = spawnedSections[0].transform.position;
+
+        // Adding End Point
+        GameObject levelEnd = Instantiate(endPoint);
+        levelEnd.transform.position = spawnedSections[spawnedSections.Count - 1].transform.position;
     }
 
     private void SetDeathPlane()
@@ -169,11 +217,4 @@ public class GenerationTest : MonoBehaviour
         RespawnManager.Instance.respawnPoint = (int)(lowestPoint - 8);
         Debug.Log("Respawn Point: " + RespawnManager.Instance.respawnPoint);
     }
-}
-
-public enum SymmetryType
-{
-    NONE,
-    BILATERAL,
-    TRILATERAL
 }

@@ -8,11 +8,12 @@ public class ReloadScene : MonoBehaviour
     private void Update()
     {
         float fps = 1 / Time.deltaTime;
-        Debug.Log("FPS: " + fps);
+        //Debug.Log("FPS: " + fps);
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            SceneManager.LoadScene("MainMenu");
+            SceneTransitionController stc = SceneTransitionController.Instance;
+            stc.ChangeScene("MainMenu", false);
         }
     }
 
@@ -20,10 +21,10 @@ public class ReloadScene : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            GenerationTest.iterations = Random.Range(25, 75);
-            Debug.Log("Next Level Size: " + GenerationTest.iterations);
+            GenerationTest.iterations += 25;
 
-            SceneManager.LoadScene("LevelGenerationTest");
+            SceneTransitionController stc = SceneTransitionController.Instance;
+            stc.ChangeScene("LevelGenerationTest", true);
         }
     }
 }

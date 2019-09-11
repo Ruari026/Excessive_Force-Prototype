@@ -199,6 +199,7 @@ GameObject:
   - component: {fileID: 7472307427629711969}
   - component: {fileID: 7472307427629711974}
   - component: {fileID: 7472307427629711975}
+  - component: {fileID: -1331576347703684075}
   m_Layer: 0
   m_Name: SpawnPoint
   m_TagString: Untagged
@@ -294,3 +295,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d1668900ba3ef0409211128728453cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-1331576347703684075
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7472307427629711973}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0603ef050e8b4c4479672cd992cb3d4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerPrefab: {fileID: 6586853126693013476, guid: 4c2e6bb7b07c8614fa91b648cd452c0e,
+    type: 3}
+  cameraPrefab: {fileID: 7412928964024345283, guid: f0de67b4355c25043998ff552b594891,
+    type: 3}

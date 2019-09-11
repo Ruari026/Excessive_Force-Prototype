@@ -1,17 +1,29 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class MainMenuManager : MonoBehaviour
 {
     public GameObject eyeLookTarget;
 
+    [Header("Play Menu")]
+    public Text loadSizeText;
+    public Slider loadSizeSlider;
+
+    [Header("Options Menu")]
+    public Text volumeText;
+    public Slider volumeSlider;
+
     // Start is called before the first frame update
     void Start()
     {
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
+
+        SceneTransitionController stc = SceneTransitionController.Instance;
+        stc.FinishLoading();
     }
 
     // Update is called once per frame
@@ -39,42 +51,57 @@ public class MainMenuManager : MonoBehaviour
         {
             mousePos.y = Screen.height;
         }
-
-        
+        // Z Axis
         mousePos.z = 1;
 
         mousePos = Camera.main.ScreenToWorldPoint(mousePos);
-
         eyeLookTarget.transform.position = mousePos;
     }
 
 
     /*
     ====================================================================================================
-    Play  Game
+    Play Menu
     ====================================================================================================
     */
-    public void LoadLevelGenerationTest()
+    public void MoveToGame()
     {
-        SceneManager.LoadScene("LevelGenerationTest");
+        SceneTransitionController stc = SceneTransitionController.Instance;
+        stc.ChangeScene("LevelGenerationTest", true);
+    }
+
+    public void SetLevelGenerationSize()
+    {
+        int newIterations = (int)loadSizeSlider.value;
+        newIterations = (newIterations * 5) + 25;
+
+        loadSizeText.text = "Level Size : " + newIterations;
+        GenerationTest.iterations = newIterations;
     }
 
 
     /*
     ====================================================================================================
-    Options
+    Options Menu
     ====================================================================================================
     */
+    public void SetGameVolume()
+    {
+        float newVolume = volumeSlider.value / 10;
+
+        volumeText.text = "Master : " + newVolume.ToString("0.0");
+        AudioListener.volume = newVolume;
+    }
 
 
     /*
     ====================================================================================================
-    Quitting Game
+    Quit Confirmation
     ====================================================================================================
     */
     public void QuitGame()
     {
-
+        Application.Quit();
     }
 
 
