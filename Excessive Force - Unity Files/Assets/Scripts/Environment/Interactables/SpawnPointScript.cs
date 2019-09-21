@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class SpawnPointScript : MonoBehaviour
 {
+    [Header("Player Spawning")]
     public GameObject playerPrefab;
     public GameObject cameraPrefab;
 
@@ -17,6 +18,12 @@ public class SpawnPointScript : MonoBehaviour
         GenerationTest.OnEventGenetationFinished -= SpawnPlayer;
     }
 
+
+    /*
+    ====================================================================================================
+    Spawning
+    ====================================================================================================
+    */
     private void SpawnPlayer()
     {
         if (playerPrefab ==  null || cameraPrefab == null)
@@ -36,5 +43,17 @@ public class SpawnPointScript : MonoBehaviour
 
             newPlayer.transform.position = this.transform.position + Vector3.up;
         }
+    }
+
+
+    /*
+    ====================================================================================================
+    Returning To Main Menu
+    ====================================================================================================
+    */
+    public void ReturnToMainMenu()
+    {
+        SceneTransitionController stc = SceneTransitionController.Instance;
+        stc.ChangeScene("MainMenu", false);
     }
 }

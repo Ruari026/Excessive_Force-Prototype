@@ -37,7 +37,7 @@ public class ProjectileController : MonoBehaviour
                 EntityDamageController dc = collision.gameObject.GetComponent<EntityDamageController>();
 
                 // Damaging Hit Entitys
-                dc.DamageEntity(this.damage);
+                dc.DamageEntity(this.damage, collision);
             }
         }
     }
