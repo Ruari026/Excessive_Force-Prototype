@@ -73,8 +73,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1053134297923080451}
-  - component: {fileID: 7050540713229810125}
   - component: {fileID: 4380057596246206826}
+  - component: {fileID: 7050540713229810125}
   - component: {fileID: 1833998961380718958}
   m_Layer: 0
   m_Name: TargetPrefab
@@ -99,22 +99,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7050540713229810125
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5349192946799675941}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3b5912598df6922449c63e5e95b2de4f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentHealth: 0
-  maxHealth: 99
-  damageTextPrefab: {fileID: 6968963284670993252, guid: fac285c53479e8c4aa869dac8edcd013,
-    type: 3}
 --- !u!54 &4380057596246206826
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -131,6 +115,22 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!114 &7050540713229810125
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5349192946799675941}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b5912598df6922449c63e5e95b2de4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentHealth: 0
+  maxHealth: 99
+  damageTextPrefab: {fileID: 6968963284670993252, guid: fac285c53479e8c4aa869dac8edcd013,
+    type: 3}
 --- !u!114 &1833998961380718958
 MonoBehaviour:
   m_ObjectHideFlags: 0
