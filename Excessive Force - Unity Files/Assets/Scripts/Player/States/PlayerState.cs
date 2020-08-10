@@ -24,3 +24,14 @@ public abstract class PlayerState
 
     }
 }
+
+
+public enum PlayerStates
+{
+    STATE_IDLE,
+    STATE_MENU,
+    STATE_MOVING,
+    STATE_JUMPING,
+    STATE_FALLING,
+    STATE_DISABLED
+}

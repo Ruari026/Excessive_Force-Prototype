@@ -35,8 +35,13 @@ public class ColorChanger : MonoBehaviour
         LoadPaletteInformation();
     }
 
-    // Update is called once per frame
-    void Update()
+
+    /*
+    ====================================================================================================
+    Player Interaction
+    ====================================================================================================
+    */
+    public void OnInteract(PlayerController targetPlayer)
     {
 
     }

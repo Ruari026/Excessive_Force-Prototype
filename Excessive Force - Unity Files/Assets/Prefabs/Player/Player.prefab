@@ -1291,6 +1291,7 @@ MonoBehaviour:
   modelHips: {fileID: 3243393410825989097}
   modelSpine: {fileID: 8993551838774454551}
   hipRotationSpeed: 10
+  eyeLookTarget: {fileID: 1785223028905192747}
   playerWeapon: {fileID: 3773966040070432732}
   animController: {fileID: 1671149207999684673}
   cameraMount: {fileID: 0}

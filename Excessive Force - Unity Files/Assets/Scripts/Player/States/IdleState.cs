@@ -11,6 +11,9 @@ public class IdleState : PlayerState
         // Setting Animation State
         thePlayer.animController.SetBool("Moving", false);
         thePlayer.animController.SetBool("Grounded", true);
+        thePlayer.animController.SetBool("Menu", false);
+
+        thePlayer.followCameraRotation = true;
 
         hipRotation = thePlayer.transform.eulerAngles;
     }

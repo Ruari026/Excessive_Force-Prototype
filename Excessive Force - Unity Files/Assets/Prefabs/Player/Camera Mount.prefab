@@ -64,7 +64,7 @@ Camera:
   m_Depth: 1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 1847
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -141,7 +141,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7bba91a4d1bbca04f9d027a2b711febb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  theCamera: {fileID: 7412928963820566982}
+  startState: 0
+  gameCamera: {fileID: 7412928963820566982}
   followTarget: {fileID: 0}
-  pitchLimits: {x: -30, y: 60}
-  zoomLimits: {x: -2, y: -10}

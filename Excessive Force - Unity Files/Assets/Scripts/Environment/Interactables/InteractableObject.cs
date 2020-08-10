@@ -6,11 +6,11 @@ using UnityEngine.EventSystems;
 
 public class InteractableObject : MonoBehaviour
 {
-    private GameObject thePlayer;
+    private PlayerController thePlayer;
 
     [Header("Player Interaction")]
     private bool canInteract = true;
-    public float interactRange = 2;
+    public float interactRange = 4;
     public UnityEvent OnInteraction;
 
     [Header("UI")]
@@ -48,8 +48,18 @@ public class InteractableObject : MonoBehaviour
         }
         else
         {
-            thePlayer = GameObject.FindGameObjectWithTag("Player");
+            thePlayer = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
         }
+    }
+
+    public virtual void OnInteract()
+    {
+
+    }
+
+    public virtual void OnDisengage()
+    {
+
     }
 
     public void CanInteract(bool newState)

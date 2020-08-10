@@ -7,6 +7,11 @@ public class RotationTest : MonoBehaviour
     private float currentRotation = 0;
     public float rotationSpeed = 30;
 
+    private void Start()
+    {
+        currentRotation = this.transform.eulerAngles.y;
+    }
+
     // Update is called once per frame
     void Update()
     {

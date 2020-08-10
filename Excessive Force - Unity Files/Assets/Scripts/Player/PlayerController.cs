@@ -5,10 +5,12 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     // The state the player is currently in
+    public PlayerStates startState;
     private PlayerState currentState;
 
     // All possible states for the player to be in
     public IdleState playerIdle;
+    public MenuState playerMenu;
     public WalkingState playerMoving;
     public JumpingState playerJumping;
     public FallingState playerFalling;
@@ -35,6 +37,9 @@ public class PlayerController : MonoBehaviour
     public GameObject modelSpine;
     public float hipRotationSpeed = 90;
 
+    // Other Model Information
+    public GameObject eyeLookTarget;
+
     //Player Weapon Info
     [Header("Player Weapon")]
     public WeaponController playerWeapon;
@@ -51,12 +56,13 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         playerIdle = new IdleState();
+        playerMenu = new MenuState();
         playerMoving = new WalkingState();
         playerJumping = new JumpingState();
         playerFalling = new FallingState();
         playerDisabled = new DisabledState();
-        
-        this.currentState = playerIdle;
+
+        ChangeState(startState);
     }
 
 
@@ -113,6 +119,48 @@ public class PlayerController : MonoBehaviour
 
         this.currentState = newState;
         this.currentState.StartState(this);
+    }
+
+    public void ChangeState(PlayerStates newState)
+    {
+        switch (newState)
+        {
+            case (PlayerStates.STATE_IDLE):
+                {
+                    ChangeState(playerIdle);
+                }
+                break;
+
+            case (PlayerStates.STATE_MENU):
+                {
+                    ChangeState(playerMenu);
+                }
+                break;
+
+            case (PlayerStates.STATE_MOVING):
+                {
+                    ChangeState(playerMoving);
+                }
+                break;
+
+            case (PlayerStates.STATE_JUMPING):
+                {
+                    ChangeState(playerJumping);
+                }
+                break;
+
+            case (PlayerStates.STATE_FALLING):
+                {
+                    ChangeState(playerFalling);
+                }
+                break;
+
+            case (PlayerStates.STATE_DISABLED):
+                {
+                    ChangeState(playerDisabled);
+                }
+                break;
+        }
     }
 
     public IEnumerator ChangeStateTemporary(PlayerState tempState, float time)

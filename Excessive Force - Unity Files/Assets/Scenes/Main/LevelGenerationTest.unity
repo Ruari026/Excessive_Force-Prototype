@@ -51,7 +51,7 @@ LightmapSettings:
     m_IndirectOutputScale: 1
     m_AlbedoBoost: 1
     m_EnvironmentLightingMode: 0
-    m_EnableBakedLightmaps: 1
+    m_EnableBakedLightmaps: 0
     m_EnableRealtimeLightmaps: 1
   m_LightmapEditorSettings:
     serializedVersion: 12
@@ -167,18 +167,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startRoom: {fileID: 4069269836741780400, guid: a650a44b75db63a4092d53eaa72dc90b,
     type: 3}
-  roomPrefabs:
-  - {fileID: 6401818374559693599, guid: ee1ba0598a105df4085dc000936a8ee8, type: 3}
-  - {fileID: 6274319650784754329, guid: b560d4db89574a740a2404ed20d7ffbc, type: 3}
-  - {fileID: 4069269836741780400, guid: a650a44b75db63a4092d53eaa72dc90b, type: 3}
-  - {fileID: 3857636765734469271, guid: 9844017d361bee546ab3add6d4cf8eb1, type: 3}
-  - {fileID: 465363575393344888, guid: 9e7d85f78bb408a4f82416d59a2b3a3b, type: 3}
-  - {fileID: 988920207947200017, guid: 91d582ff15742a541b1cbd4f091b300a, type: 3}
-  corridorPrefabs:
-  - {fileID: 5882095400006948652, guid: 9a55b550ae672b140b8bc65d70f95118, type: 3}
-  - {fileID: 7423250844472520344, guid: a8b29dbe39d61a4418639c9a3879042c, type: 3}
-  - {fileID: 3399573705493586078, guid: bbec448ab7b3e2840b0442f4ffe75690, type: 3}
-  - {fileID: 8956246870613890735, guid: b1ad4fa72001c044e93c1446a8223363, type: 3}
+  roomPrefabs: []
+  corridorPrefabs: []
   spawnPoint: {fileID: 7141075579342308266, guid: 23b1aef4fb62c2e4a81c0a5d35ff2dcb,
     type: 3}
   endPoint: {fileID: 1262650316326135212, guid: 723c7220a8c9c8f48b8f2535b47455e2,

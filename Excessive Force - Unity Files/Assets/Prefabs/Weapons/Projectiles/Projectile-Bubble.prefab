@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3625470992745818045}
   - component: {fileID: -6396743847769992537}
   m_Layer: 9
-  m_Name: Projectile-Cloud
+  m_Name: Projectile-Bubble
   m_TagString: Projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -142,7 +142,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: b9203f0c8b2f5bf47b77e554ec8109b8, type: 2}
+  - {fileID: 2100000, guid: 8903f9bd9557d15409840406dc15cf45, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

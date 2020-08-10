@@ -4,66 +4,107 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
-    public GameObject theCamera;
+    // The state the player is currently in
+    public CameraStates startState;
+    private CameraState currentState;
+
+    // All possible states for the player to be in
+    public CameraGameplayState cameraGameplay;
+    public CameraMenuState cameraMenu;
+
+    // Camera Mount Info
+    public GameObject gameCamera;
     public GameObject followTarget;
-
-    private float yaw = 0;
-    private float pitch = 0;
-    public Vector2 pitchLimits = new Vector2(-30, 60);
-    public Vector2 zoomLimits = new Vector2(-2, -10);
-
-    public static bool disabled = false;
 
     // Start is called before the first frame update
     void Start()
     {
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
+        cameraGameplay = new CameraGameplayState();
+        cameraMenu = new CameraMenuState();
+
+        ChangeState(startState);
     }
 
-    // Update is called once per frame
+
+    /*
+    ====================================================================================================
+    Updating States
+    ====================================================================================================
+    */
     void Update()
     {
         // Following the player character
         this.transform.position = followTarget.transform.position;
 
-        if (!disabled)
+        // State Handling
+        currentState.UpdateState(this);
+    }
+
+
+    /*
+    ====================================================================================================
+    Handling State Changes
+    ====================================================================================================
+    */
+    public void ChangeState(CameraState newState)
+    {
+        this.currentState = newState;
+        this.currentState.StartState(this);
+    }
+
+    public void ChangeState(CameraStates newState)
+    {
+        switch (newState)
         {
-            // Orbiting the camera around the player
-            // Affecting Rotation On The Y Axis
-            yaw += Input.GetAxis("Mouse X") * 90 * Time.deltaTime;
-            // Affecting Rotation On The X Axis
-            pitch -= Input.GetAxis("Mouse Y") * 90 * Time.deltaTime;
-            if (pitch < pitchLimits.x)
-            {
-                pitch = pitchLimits.x;
-            }
-            else if (pitch > pitchLimits.y)
-            {
-                pitch = pitchLimits.y;
-            }
-            this.transform.eulerAngles = new Vector3(pitch, yaw, 0);
-
-            // Setting Camera Distance From The Player
-            float zoomPercentage = (pitch - pitchLimits.x) / (pitchLimits.y - pitchLimits.x);
-            Vector3 camPos = theCamera.transform.localPosition;
-            camPos.z = ((zoomLimits.y - zoomLimits.x) * zoomPercentage) + zoomLimits.x;
-
-            //Overriding Camera Zoom if too close to an object
-            Ray ray = new Ray
-            {
-                origin = followTarget.transform.position,
-                direction = followTarget.transform.forward * -1
-            };
-            if (Physics.Raycast(ray, out RaycastHit hit))
-            {
-                float distance = Vector3.Distance(followTarget.transform.position, hit.point) * -1;
-                if (distance > camPos.z)
+            case (CameraStates.STATE_GAMEPLAY):
                 {
-                    camPos.z = distance; 
+                    ChangeState(cameraGameplay);
                 }
-            }
-            theCamera.transform.localPosition = Vector3.Lerp(theCamera.transform.localPosition, camPos, Time.deltaTime * 10);
+                break;
+
+            case (CameraStates.STATE_MENU):
+                {
+                    ChangeState(cameraMenu);
+                }
+                break;
         }
+    }
+
+    public IEnumerator ChangeStateLerp(CameraState newState, float time)
+    {
+        float t = 0;
+        Vector3 startOffset = gameCamera.transform.localPosition;
+        Vector3 endOffset = newState.cameraOffset;
+
+        while (t <= 1.0f)
+        {
+            t += (Time.deltaTime / time);
+
+            Vector3 newOffset = Vector3.Lerp(startOffset, endOffset, t);
+            gameCamera.transform.localPosition = newOffset;
+
+            yield return null;
+        }
+
+        gameCamera.transform.localPosition = endOffset;
+        ChangeState(newState);
+    }
+
+    public IEnumerator ChangeStateTemporary(CameraState tempState, float time)
+    {
+        CameraState stateBefore = this.currentState;
+        ChangeState(tempState);
+
+        yield return new WaitForSeconds(time);
+
+        ChangeState(stateBefore);
+    }
+    public IEnumerator ChangeStateTemporary(CameraState tempState, CameraState newState, float time)
+    {
+        ChangeState(tempState);
+
+        yield return new WaitForSeconds(time);
+
+        ChangeState(newState);
     }
 }
