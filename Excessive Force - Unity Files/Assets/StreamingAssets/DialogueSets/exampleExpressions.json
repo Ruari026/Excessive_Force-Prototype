@@ -1,0 +1,48 @@
+ {
+    "dialogueOptions": [
+      {
+        "type": 1,
+        "expression": 0,
+        "npcText": "Are you still messing about with that shader",
+        "playerOptions": [
+          "Yes",
+          "Yup"
+        ],
+        "dialogueConnections": [
+          1,
+          1
+        ],
+        "endEventCode": ""
+      },
+      {
+        "type": 1,
+        "expression": 0,
+        "npcText": "You should really be working on other things you know...",
+        "playerOptions": [
+          "Sorry, I'll get to it soon",
+          "Hey, there's no need to pester me this shit is tough"
+        ],
+        "dialogueConnections": [
+          2,
+          3
+        ],
+        "endEventCode": ""
+      },
+      {
+        "type": 2,
+        "expression": 0,
+        "npcText": "Good, we really need those other mechanics",
+        "playerOptions": [],
+        "dialogueConnections": [],
+        "endEventCode": ""
+      },
+      {
+        "type": 2,
+        "expression": 0,
+        "npcText": "Im just saying, you need to get your priorities straight",
+        "playerOptions": [],
+        "dialogueConnections": [],
+        "endEventCode": ""
+      }
+    ]
+}

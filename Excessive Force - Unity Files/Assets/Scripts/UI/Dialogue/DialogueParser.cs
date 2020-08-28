@@ -28,6 +28,7 @@ public class DialogueTree
 public struct DialogueOption
 {
     public DialogueType type;
+    public DialogueExpression expression;
 
     public string npcText;
     public List<string> playerOptions;
@@ -41,4 +42,11 @@ public enum DialogueType
     DIALOGUE_NORMAL,
     DIALOGUE_OPTIONS,
     DIALOGUE_END
+}
+
+public enum DialogueExpression
+{
+    EXPRESSION_GREETING,
+    EXPRESSION_YES,
+    EXPRESSION_NO
 }
