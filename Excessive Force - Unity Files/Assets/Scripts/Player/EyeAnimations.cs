@@ -15,6 +15,7 @@ public class EyeAnimations : MonoBehaviour
     public GameObject rightEyeLid;
 
     [Header("Animation")]
+    public GameObject lookMount;
     public GameObject lookTarget;
     public static bool lookAtTarget = true;
     public static bool canBlink = true;
@@ -97,11 +98,11 @@ public class EyeAnimations : MonoBehaviour
         if (canBlink)
         {
             // Randomly Change Expression
-            int i = Random.Range(0, 10);
+            /*int i = Random.Range(0, 10);
             if (i == 5)
             {
                 currentExpression = (EyeExpressions)Random.Range(0, 3);
-            }
+            }*/
             Blink();
         }
 

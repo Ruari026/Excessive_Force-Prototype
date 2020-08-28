@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class CameraGameplayState : CameraState
 {
-    private float yaw = 0;
-    private float pitch = 0;
+    public float yaw = 0;
+    public float pitch = 0;
     public Vector2 pitchLimits = new Vector2(-30, 60);
     public Vector2 zoomLimits = new Vector2(-2, -10);
     public float moveSpeed;
 
     public CameraGameplayState()
     {
-        cameraOffset = new Vector3(0.5f, 1.1f, -4.0f);
+        cameraOffset = new Vector3(0.5f, 1.6f, -4.0f);
     }
 
     public override void StartState(CameraController theCamera)

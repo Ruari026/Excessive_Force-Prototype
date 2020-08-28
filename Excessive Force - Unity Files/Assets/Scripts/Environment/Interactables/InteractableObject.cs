@@ -16,6 +16,12 @@ public class InteractableObject : MonoBehaviour
     [Header("UI")]
     public Animator interactionIcon;
 
+    // Start is called before the first frame update
+    void Start()
+    {
+        thePlayer = GameObject.FindObjectOfType<PlayerController>();
+    }
+
     // Update is called once per frame
     private void Update()
     {
@@ -46,10 +52,6 @@ public class InteractableObject : MonoBehaviour
                 interactionIcon.SetBool("CanInteract", false);
             }
         }
-        else
-        {
-            thePlayer = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
-        }
     }
 
     public virtual void OnInteract()
@@ -62,7 +64,7 @@ public class InteractableObject : MonoBehaviour
 
     }
 
-    public void CanInteract(bool newState)
+    public void SetCanInteract(bool newState)
     {
         canInteract = newState;
     }
