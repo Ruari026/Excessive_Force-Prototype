@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[ExecuteAlways]
 public class CameraPixelationEffect : MonoBehaviour
 {
     [SerializeField]
@@ -23,9 +24,7 @@ public class CameraPixelationEffect : MonoBehaviour
         if (canPixelate)
         {
             Vector2 screenDimentions = new Vector2(Screen.width, Screen.height);
-            screenDimentions.Normalize();
-
-            screenDimentions *= pixelationAmount;
+            screenDimentions /= pixelationAmount;
 
             material.SetFloat("_Columns", screenDimentions.x);
             material.SetFloat("_Rows", screenDimentions.y);

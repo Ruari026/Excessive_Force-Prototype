@@ -7,7 +7,7 @@ public class PipeContentsAnimator : MonoBehaviour
     public bool canAnimate = true;
 
     [Header("Material Details")]
-    [SerializeField] private MeshRenderer targetMesh;
+    [SerializeField] private Renderer targetMesh;
     private Material instancedMaterial;
 
     [Header("Animation Speeds")]

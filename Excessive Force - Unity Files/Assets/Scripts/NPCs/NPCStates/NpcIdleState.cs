@@ -29,7 +29,7 @@ public class NpcIdleState : NpcState
         else
         {
             // Reset Eye Tracking
-            theEyes.lookTarget.transform.position = Vector3.zero;
+            theEyes.lookTarget.transform.localPosition = Vector3.zero;
         }
     }
 

@@ -87,12 +87,13 @@ public class DialogueBoxController : MonoBehaviour
     {
         CameraController theCamera = GameObject.FindObjectOfType<CameraController>();
 
-        CameraMenuState theCameraState = theCamera.cameraMenu;
-        theCameraState.targetRotation = Quaternion.Euler(new Vector3(theCamera.cameraGameplay.pitch, theCamera.cameraGameplay.yaw, 0));
-        theCameraState.cameraOffset = new Vector3(0.5f, 1.1f, -4.0f);
+        CameraDialogueState cds = theCamera.cameraDialogue;
+        CameraGameplayState cgs = theCamera.cameraGameplay;
+
+        cds.targetRotation = Quaternion.Euler(new Vector3(cgs.pitch, cgs.yaw, 0));
+        cds.cameraOffset = cgs.cameraOffset;
 
         yield return new WaitForSeconds(2);
-        //yield return new WaitUntil(() => theCamera.transform.rotation == interactingPlayer.transform.rotation);
 
         // Returning control to the player
         if (interactingPlayer != null)

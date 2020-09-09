@@ -21,5 +21,6 @@ public abstract class CameraState
 public enum CameraStates
 {
     STATE_GAMEPLAY,
-    STATE_MENU
+    STATE_MENU,
+    STATE_DIALOGUE
 }

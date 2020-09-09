@@ -11,6 +11,7 @@ public class CameraController : MonoBehaviour
     // All possible states for the player to be in
     public CameraGameplayState cameraGameplay;
     public CameraMenuState cameraMenu;
+    public CameraDialogueState cameraDialogue;
 
     // Camera Mount Info
     public GameObject gameCamera;
@@ -21,6 +22,7 @@ public class CameraController : MonoBehaviour
     {
         cameraGameplay = new CameraGameplayState();
         cameraMenu = new CameraMenuState();
+        cameraDialogue = new CameraDialogueState();
 
         ChangeState(startState);
     }
@@ -65,6 +67,12 @@ public class CameraController : MonoBehaviour
             case (CameraStates.STATE_MENU):
                 {
                     ChangeState(cameraMenu);
+                }
+                break;
+
+            case (CameraStates.STATE_DIALOGUE):
+                {
+                    ChangeState(cameraDialogue);
                 }
                 break;
         }

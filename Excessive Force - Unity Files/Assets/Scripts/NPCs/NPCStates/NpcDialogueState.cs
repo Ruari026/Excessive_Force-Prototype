@@ -17,7 +17,7 @@ public class NpcDialogueState : NpcState
 
         // Setting the camera to view both speakers
         CameraController theCamera = GameObject.FindObjectOfType<CameraController>();
-        theCamera.ChangeState(CameraStates.STATE_MENU);
+        theCamera.ChangeState(CameraStates.STATE_DIALOGUE);
 
         // Starting Dialogue
         dialogueTree = DialogueParser.LoadFromFilePath(DialogueParser.defaultFilePath + theNPC.dialogueFileName + ".json");

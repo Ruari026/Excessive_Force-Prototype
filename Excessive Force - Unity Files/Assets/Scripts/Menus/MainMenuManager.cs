@@ -57,26 +57,15 @@ public class MainMenuManager : MonoBehaviour
 
     private IEnumerator MoveGameAnim(float animTime)
     {
-        // lerp camera to new transform
-        float t = 0;
-        Vector3 startPos = theCamera.transform.position;
-        Quaternion startRot = theCamera.transform.rotation;
+        CameraController theCamera = GameObject.FindObjectOfType<CameraController>();
 
-        while (t < 1.0)
-        {
-            t += (Time.deltaTime / animTime);
+        CameraMenuState cms = theCamera.cameraMenu;
+        CameraGameplayState cgs = theCamera.cameraGameplay;
 
-            Vector3 newPos = Vector3.Lerp(startPos, thePlayer.modelSpine.transform.position, t);
-            Quaternion newRot = Quaternion.Lerp(startRot, thePlayer.transform.rotation, t);
+        cms.targetRotation = Quaternion.Euler(new Vector3(cgs.pitch, cgs.yaw, 0));
+        cms.cameraOffset = cgs.cameraOffset;
 
-            theCamera.transform.position = newPos;
-            theCamera.transform.rotation = newRot;
-
-            yield return null;
-        }
-
-        theCamera.transform.position = thePlayer.modelSpine.transform.position;
-        theCamera.transform.rotation = thePlayer.transform.rotation;
+        yield return new WaitForSeconds(2);
 
         thePlayer.ChangeState(thePlayer.playerIdle);
         theCamera.ChangeState(theCamera.cameraGameplay);
