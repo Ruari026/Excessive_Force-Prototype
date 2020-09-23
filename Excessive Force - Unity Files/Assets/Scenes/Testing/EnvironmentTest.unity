@@ -29522,11 +29522,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 6586853126693013474, guid: 4c2e6bb7b07c8614fa91b648cd452c0e,
-        type: 3}
-      propertyPath: cameraMount
-      value: 
-      objectReference: {fileID: 806189729}
     - target: {fileID: 6586853126693013477, guid: 4c2e6bb7b07c8614fa91b648cd452c0e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -29582,6 +29577,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6586853126693013474, guid: 4c2e6bb7b07c8614fa91b648cd452c0e,
+        type: 3}
+      propertyPath: cameraMount
+      value: 
+      objectReference: {fileID: 806189729}
     - target: {fileID: 436363001525365245, guid: 4c2e6bb7b07c8614fa91b648cd452c0e,
         type: 3}
       propertyPath: m_LocalPosition.z
@@ -38632,11 +38632,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Camera Mount
       objectReference: {fileID: 0}
-    - target: {fileID: 7412928964024345281, guid: f0de67b4355c25043998ff552b594891,
-        type: 3}
-      propertyPath: followTarget
-      value: 
-      objectReference: {fileID: 1805914959}
     - target: {fileID: 7412928964024345282, guid: f0de67b4355c25043998ff552b594891,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -38691,6 +38686,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7412928964024345281, guid: f0de67b4355c25043998ff552b594891,
+        type: 3}
+      propertyPath: followTarget
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f0de67b4355c25043998ff552b594891, type: 3}
@@ -55720,12 +55720,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6461739444008549702, guid: c6f1716c50611c6428d20adc204d9e81,
     type: 3}
   m_PrefabInstance: {fileID: 1805335947}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1805914959 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8993551838774454551, guid: 4c2e6bb7b07c8614fa91b648cd452c0e,
-    type: 3}
-  m_PrefabInstance: {fileID: 948898967}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1806017245
 PrefabInstance:
