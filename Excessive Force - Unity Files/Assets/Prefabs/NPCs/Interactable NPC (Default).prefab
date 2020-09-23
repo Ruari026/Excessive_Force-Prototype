@@ -1599,9 +1599,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6530042636c459549b3c1cc79490d77f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  leftFollowTarget: 1
   leftEyeBone: {fileID: 7849466256094452865}
   leftEye: {fileID: 6781354372132789774}
   leftEyeLid: {fileID: 7794546446558527281}
+  rightFollowTarget: 1
   rightEyeBone: {fileID: 4539412141709372795}
   rightEye: {fileID: 8833462875525574177}
   rightEyeLid: {fileID: 282753187707799278}
@@ -1621,6 +1623,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01151850613ee3c4690f99a2854ad73b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canInteract: 1
   interactRange: 6
   OnInteraction:
     m_PersistentCalls:
@@ -2159,8 +2162,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f039a60af6b8a2640afe74680351fc3b, type: 2}
-  - {fileID: 2100000, guid: 67df5ca5ce73cfb4b895b1730a94b8cf, type: 2}
+  - {fileID: 2100000, guid: f6aa8e29851ad6745b2417ee557715a9, type: 2}
+  - {fileID: 2100000, guid: f6aa8e29851ad6745b2417ee557715a9, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3261,8 +3264,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f039a60af6b8a2640afe74680351fc3b, type: 2}
-  - {fileID: 2100000, guid: 67df5ca5ce73cfb4b895b1730a94b8cf, type: 2}
+  - {fileID: 2100000, guid: f6aa8e29851ad6745b2417ee557715a9, type: 2}
+  - {fileID: 2100000, guid: f6aa8e29851ad6745b2417ee557715a9, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
