@@ -18,7 +18,7 @@ public class CameraMenuState : CameraState
         Cursor.visible = true;
 
         // Setup
-        cameraOffset = new Vector3(-0.31f, 0.2f, -1.98f);
+        cameraOffset = new Vector3(-0.31f, 1.4f, -1.98f);
         //targetRotation = Quaternion.Euler(theCamera.followTarget.transform.eulerAngles + new Vector3(0, 180, 0));
     }
 

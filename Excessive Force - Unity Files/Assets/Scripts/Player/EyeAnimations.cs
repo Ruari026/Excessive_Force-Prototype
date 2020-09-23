@@ -5,11 +5,13 @@ using UnityEngine;
 public class EyeAnimations : MonoBehaviour
 {
     [Header("Left Eye")]
+    public bool leftFollowTarget = true;
     public GameObject leftEyeBone;
     public GameObject leftEye;
     public GameObject leftEyeLid;
 
     [Header("Right Eye")]
+    public bool rightFollowTarget = true;
     public GameObject rightEyeBone;
     public GameObject rightEye;
     public GameObject rightEyeLid;
@@ -51,7 +53,12 @@ public class EyeAnimations : MonoBehaviour
         {
             lookTarget.transform.localPosition = Vector3.zero;
         }
-        LookAtTarget(new GameObject[] { rightEye, leftEye });
+        List<GameObject> eyesToLook = new List<GameObject>();
+        if (rightFollowTarget)
+            eyesToLook.Add(rightEye);
+        if (leftFollowTarget)
+            eyesToLook.Add(leftEye);
+        LookAtTarget(eyesToLook.ToArray());
 
         // Eye Expression
         if (animController.gameObject.activeSelf)

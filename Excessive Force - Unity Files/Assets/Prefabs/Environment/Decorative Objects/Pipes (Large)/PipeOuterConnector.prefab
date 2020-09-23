@@ -101,6 +101,68 @@ MonoBehaviour:
   cableOrigin: {fileID: 4806093213539560385}
   cableEnd: {fileID: 2091966544022003849}
   indentAmount: 0.4
+--- !u!1 &1687944723509725562
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 1525004606576113509}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5766791251515142800}
+  m_Layer: 0
+  m_Name: Missing Prefab (Dummy)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5766791251515142800
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 4984963116336825845, guid: 2af441ba72984b34b98d746b288457ff,
+    type: 3}
+  m_PrefabInstance: {fileID: 1525004606576113509}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1687944723509725562}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5716985098615507014}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2471943692372430736
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 1525004606576113509}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5716985098615507014}
+  m_Layer: 0
+  m_Name: Crater (Missing Prefab)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5716985098615507014
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 1525004606576113509}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2471943692372430736}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 5766791251515142800}
+  m_Father: {fileID: 8702252049482395937}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2634473750257634351
 GameObject:
   m_ObjectHideFlags: 0
@@ -256,7 +318,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 5766791251515142800}
+  - {fileID: 5716985098615507014}
   - {fileID: 7896927613166414434}
   - {fileID: 5984838725357145102}
   m_Father: {fileID: 9165710236289658292}
@@ -709,11 +771,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3671424793154195671}
     m_Modifications:
-    - target: {fileID: 3041953497094690307, guid: 9eefd6e5b62c3764c9fcf72831ca80bd,
-        type: 3}
-      propertyPath: m_Name
-      value: PipeBrace
-      objectReference: {fileID: 0}
     - target: {fileID: 11467479656711060, guid: 9eefd6e5b62c3764c9fcf72831ca80bd,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -769,6 +826,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3041953497094690307, guid: 9eefd6e5b62c3764c9fcf72831ca80bd,
+        type: 3}
+      propertyPath: m_Name
+      value: PipeBrace
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9eefd6e5b62c3764c9fcf72831ca80bd, type: 3}
 --- !u!4 &1346268912028306948 stripped
@@ -784,16 +846,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8702252049482395937}
     m_Modifications:
-    - target: {fileID: 6430278579478775523, guid: 2af441ba72984b34b98d746b288457ff,
-        type: 3}
-      propertyPath: m_Name
-      value: Crater
-      objectReference: {fileID: 0}
-    - target: {fileID: 6430278579478775523, guid: 2af441ba72984b34b98d746b288457ff,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4984963116336825845, guid: 2af441ba72984b34b98d746b288457ff,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -859,14 +911,18 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 1.3
       objectReference: {fileID: 0}
+    - target: {fileID: 6430278579478775523, guid: 2af441ba72984b34b98d746b288457ff,
+        type: 3}
+      propertyPath: m_Name
+      value: Crater
+      objectReference: {fileID: 0}
+    - target: {fileID: 6430278579478775523, guid: 2af441ba72984b34b98d746b288457ff,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2af441ba72984b34b98d746b288457ff, type: 3}
---- !u!4 &5766791251515142800 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4984963116336825845, guid: 2af441ba72984b34b98d746b288457ff,
-    type: 3}
-  m_PrefabInstance: {fileID: 1525004606576113509}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &9165710236745763666
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -874,11 +930,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5292079674556426174}
     m_Modifications:
-    - target: {fileID: 1256391483508145030, guid: d24dbc72719e6284ea9de3d65a37ae0c,
-        type: 3}
-      propertyPath: m_Name
-      value: pipeContents
-      objectReference: {fileID: 0}
     - target: {fileID: 1256391483508145048, guid: d24dbc72719e6284ea9de3d65a37ae0c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -948,6 +999,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 0.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 1256391483508145030, guid: d24dbc72719e6284ea9de3d65a37ae0c,
+        type: 3}
+      propertyPath: m_Name
+      value: pipeContents
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d24dbc72719e6284ea9de3d65a37ae0c, type: 3}

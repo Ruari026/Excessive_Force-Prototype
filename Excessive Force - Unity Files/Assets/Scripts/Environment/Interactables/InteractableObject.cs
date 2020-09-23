@@ -9,8 +9,8 @@ public class InteractableObject : MonoBehaviour
     private PlayerController thePlayer;
 
     [Header("Player Interaction")]
-    private bool canInteract = true;
-    public float interactRange = 4;
+    [SerializeField] private bool canInteract = true;
+    [SerializeField] private float interactRange = 4;
     public UnityEvent OnInteraction;
 
     [Header("UI")]
