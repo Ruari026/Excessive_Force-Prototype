@@ -4788,19 +4788,6 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
---- !u!114 &7425555714209553998
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3606582503463925167}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 164479949ece81945b33437a81f01c0a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bounceForce: 3500
 --- !u!54 &8310373819372674789
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4817,6 +4804,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!114 &7425555714209553998
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3606582503463925167}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 164479949ece81945b33437a81f01c0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bounceForce: 3500
 --- !u!1 &7719199601329116443
 GameObject:
   m_ObjectHideFlags: 0
@@ -4869,6 +4869,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d1668900ba3ef0409211128728453cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  xLock: 0.5
+  yLock: 0.5
+  zLock: 0.866
 --- !u!54 &4920845503645569558
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5531,7 +5534,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[1]
       value: 
-      objectReference: {fileID: 2100000, guid: 495ab7832f1b96a46aec23dddac59c54, type: 2}
+      objectReference: {fileID: 2100000, guid: ebeba8a5cca3ee644be1af8f852ca260, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3be95e66d61a7ad46b52758102e2b81c, type: 3}
 --- !u!4 &2519064908741186894 stripped
