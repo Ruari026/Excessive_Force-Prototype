@@ -655,6 +655,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 6586853126693013474, guid: 4c2e6bb7b07c8614fa91b648cd452c0e,
+        type: 3}
+      propertyPath: cameraMount
+      value: 
+      objectReference: {fileID: 1960474286}
+    - target: {fileID: 6586853126693013474, guid: 4c2e6bb7b07c8614fa91b648cd452c0e,
+        type: 3}
+      propertyPath: startState
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6586853126693013477, guid: 4c2e6bb7b07c8614fa91b648cd452c0e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -708,16 +718,6 @@ PrefabInstance:
     - target: {fileID: 6586853126693013477, guid: 4c2e6bb7b07c8614fa91b648cd452c0e,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6586853126693013474, guid: 4c2e6bb7b07c8614fa91b648cd452c0e,
-        type: 3}
-      propertyPath: cameraMount
-      value: 
-      objectReference: {fileID: 1960474286}
-    - target: {fileID: 6586853126693013474, guid: 4c2e6bb7b07c8614fa91b648cd452c0e,
-        type: 3}
-      propertyPath: startState
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -794,21 +794,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8036955747379371704, guid: ee2994e8911907b49912025536bd2173,
-        type: 3}
-      propertyPath: xLock
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8036955747379371704, guid: ee2994e8911907b49912025536bd2173,
-        type: 3}
-      propertyPath: yLock
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8036955747379371704, guid: ee2994e8911907b49912025536bd2173,
-        type: 3}
-      propertyPath: zLock
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ee2994e8911907b49912025536bd2173, type: 3}
@@ -938,6 +923,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Camera Mount
       objectReference: {fileID: 0}
+    - target: {fileID: 7412928964024345281, guid: f0de67b4355c25043998ff552b594891,
+        type: 3}
+      propertyPath: followTarget
+      value: 
+      objectReference: {fileID: 1640497315}
     - target: {fileID: 7412928964024345282, guid: f0de67b4355c25043998ff552b594891,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -993,11 +983,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7412928964024345281, guid: f0de67b4355c25043998ff552b594891,
-        type: 3}
-      propertyPath: followTarget
-      value: 
-      objectReference: {fileID: 1640497315}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f0de67b4355c25043998ff552b594891, type: 3}
 --- !u!1 &1960474286 stripped
@@ -1102,21 +1087,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4782837260118688600, guid: 1f396db93c9c624428fa7301478870ef,
-        type: 3}
-      propertyPath: xLock
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4782837260118688600, guid: 1f396db93c9c624428fa7301478870ef,
-        type: 3}
-      propertyPath: yLock
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4782837260118688600, guid: 1f396db93c9c624428fa7301478870ef,
-        type: 3}
-      propertyPath: zLock
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1f396db93c9c624428fa7301478870ef, type: 3}

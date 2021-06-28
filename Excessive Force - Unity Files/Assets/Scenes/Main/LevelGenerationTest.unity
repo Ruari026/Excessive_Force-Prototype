@@ -165,10 +165,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 099a9073f2ce2ac41bb15d2b36e97018, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startRoom: {fileID: 4069269836741780400, guid: a650a44b75db63a4092d53eaa72dc90b,
+  startRoom: {fileID: 1196479271789984806, guid: 2389af30863aa694cadfa67518ee2dda,
     type: 3}
-  roomPrefabs: []
-  corridorPrefabs: []
+  roomPrefabs:
+  - {fileID: 185261730041363634, guid: 3e8e75c20af113244908fdb6c1e49f87, type: 3}
+  - {fileID: 1632399319994344995, guid: a6e31a961792f55419662c1a417e42cf, type: 3}
+  - {fileID: 2396503068614141374, guid: 754a812093643a645aeaee1ed110d851, type: 3}
+  - {fileID: 5250039592229860561, guid: 46e657d93364e1c4eb08882056dbd990, type: 3}
+  - {fileID: 8354075664570931099, guid: 5524ac06bcf5b784db31f4b5b4f487e5, type: 3}
+  - {fileID: 4782837260118688602, guid: 1f396db93c9c624428fa7301478870ef, type: 3}
+  - {fileID: 8036955747379371706, guid: ee2994e8911907b49912025536bd2173, type: 3}
+  corridorPrefabs:
+  - {fileID: 8241901859759085503, guid: 9426b4b911b7bde429b8a88b3c51f68e, type: 3}
+  - {fileID: 5995575206941913883, guid: f902d35c00c1ef446933ebd46102843e, type: 3}
+  - {fileID: 8086568389754664583, guid: 7381977edcd75154a9750ad454af1df3, type: 3}
+  - {fileID: 4339459157895795433, guid: 461fbb7f98a68df4083e4a488ffa9fe5, type: 3}
+  - {fileID: 4441482230746712978, guid: fcb801d74950e0a4681c217380d49630, type: 3}
+  - {fileID: 4533881317290115083, guid: 253d11bad87390c4698aa46b3964b196, type: 3}
+  - {fileID: 4521968078013732278, guid: 9a55b550ae672b140b8bc65d70f95118, type: 3}
   spawnPoint: {fileID: 7141075579342308266, guid: 23b1aef4fb62c2e4a81c0a5d35ff2dcb,
     type: 3}
   endPoint: {fileID: 1262650316326135212, guid: 723c7220a8c9c8f48b8f2535b47455e2,
